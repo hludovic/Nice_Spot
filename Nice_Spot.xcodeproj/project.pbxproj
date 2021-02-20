@@ -13,7 +13,25 @@
 		43CCB97E25E19B6D00608108 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CCB97C25E19B6D00608108 /* Main.storyboard */; };
 		43CCB98025E19B6E00608108 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CCB97F25E19B6E00608108 /* Assets.xcassets */; };
 		43CCB98325E19B6E00608108 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CCB98125E19B6E00608108 /* LaunchScreen.storyboard */; };
+		43CCB98D25E19CD100608108 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB98C25E19CD100608108 /* Persistence.swift */; };
+		43CCB99625E19D3500608108 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB99525E19D3500608108 /* Spot.swift */; };
+		43CCB99A25E19D7C00608108 /* Nice_Spot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB99825E19D7C00608108 /* Nice_Spot.xcdatamodeld */; };
+		43CCB9A425E19E9600608108 /* Nice_SpotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB9A325E19E9600608108 /* Nice_SpotTests.swift */; };
+		43CCB9AE25E19EC600608108 /* SpotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB9AD25E19EC600608108 /* SpotTests.swift */; };
+		43CCB9B225E19EF500608108 /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB9B125E19EF500608108 /* FakeData.swift */; };
+		43CCB9B625E19F2D00608108 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB9B525E19F2D00608108 /* ImageManager.swift */; };
+		43CCB9BE25E19F9900608108 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CCB9BD25E19F9900608108 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		43CCB9A625E19E9600608108 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43CCB96B25E19B6D00608108 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43CCB97225E19B6D00608108;
+			remoteInfo = Nice_Spot;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		43CCB97325E19B6D00608108 /* Nice_Spot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nice_Spot.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +42,29 @@
 		43CCB97F25E19B6E00608108 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43CCB98225E19B6E00608108 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43CCB98425E19B6E00608108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43CCB98C25E19CD100608108 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		43CCB99525E19D3500608108 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		43CCB99925E19D7C00608108 /* Nice_Spot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nice_Spot.xcdatamodel; sourceTree = "<group>"; };
+		43CCB9A125E19E9600608108 /* Nice_SpotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nice_SpotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		43CCB9A325E19E9600608108 /* Nice_SpotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nice_SpotTests.swift; sourceTree = "<group>"; };
+		43CCB9A525E19E9600608108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43CCB9AD25E19EC600608108 /* SpotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTests.swift; sourceTree = "<group>"; };
+		43CCB9B125E19EF500608108 /* FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
+		43CCB9B525E19F2D00608108 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		43CCB9B925E19F9000608108 /* Nice_Spot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nice_Spot.entitlements; sourceTree = "<group>"; };
+		43CCB9BD25E19F9900608108 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		43CCB97025E19B6D00608108 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43CCB9BE25E19F9900608108 /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43CCB99E25E19E9600608108 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,7 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				43CCB97525E19B6D00608108 /* Nice_Spot */,
+				43CCB9A225E19E9600608108 /* Nice_SpotTests */,
 				43CCB97425E19B6D00608108 /* Products */,
+				43CCB9BC25E19F9900608108 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				43CCB97325E19B6D00608108 /* Nice_Spot.app */,
+				43CCB9A125E19E9600608108 /* Nice_SpotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,8 +96,10 @@
 		43CCB97525E19B6D00608108 /* Nice_Spot */ = {
 			isa = PBXGroup;
 			children = (
+				43CCB9B925E19F9000608108 /* Nice_Spot.entitlements */,
 				43CCB97625E19B6D00608108 /* AppDelegate.swift */,
 				43CCB97825E19B6D00608108 /* SceneDelegate.swift */,
+				43CCB98F25E19CEA00608108 /* Model */,
 				43CCB97A25E19B6D00608108 /* ViewController.swift */,
 				43CCB97C25E19B6D00608108 /* Main.storyboard */,
 				43CCB97F25E19B6E00608108 /* Assets.xcassets */,
@@ -65,6 +107,36 @@
 				43CCB98425E19B6E00608108 /* Info.plist */,
 			);
 			path = Nice_Spot;
+			sourceTree = "<group>";
+		};
+		43CCB98F25E19CEA00608108 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				43CCB98C25E19CD100608108 /* Persistence.swift */,
+				43CCB99525E19D3500608108 /* Spot.swift */,
+				43CCB99825E19D7C00608108 /* Nice_Spot.xcdatamodeld */,
+				43CCB9B525E19F2D00608108 /* ImageManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		43CCB9A225E19E9600608108 /* Nice_SpotTests */ = {
+			isa = PBXGroup;
+			children = (
+				43CCB9A325E19E9600608108 /* Nice_SpotTests.swift */,
+				43CCB9AD25E19EC600608108 /* SpotTests.swift */,
+				43CCB9B125E19EF500608108 /* FakeData.swift */,
+				43CCB9A525E19E9600608108 /* Info.plist */,
+			);
+			path = Nice_SpotTests;
+			sourceTree = "<group>";
+		};
+		43CCB9BC25E19F9900608108 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43CCB9BD25E19F9900608108 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +159,24 @@
 			productReference = 43CCB97325E19B6D00608108 /* Nice_Spot.app */;
 			productType = "com.apple.product-type.application";
 		};
+		43CCB9A025E19E9600608108 /* Nice_SpotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43CCB9A825E19E9600608108 /* Build configuration list for PBXNativeTarget "Nice_SpotTests" */;
+			buildPhases = (
+				43CCB99D25E19E9600608108 /* Sources */,
+				43CCB99E25E19E9600608108 /* Frameworks */,
+				43CCB99F25E19E9600608108 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43CCB9A725E19E9600608108 /* PBXTargetDependency */,
+			);
+			name = Nice_SpotTests;
+			productName = Nice_SpotTests;
+			productReference = 43CCB9A125E19E9600608108 /* Nice_SpotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -98,6 +188,10 @@
 				TargetAttributes = {
 					43CCB97225E19B6D00608108 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					43CCB9A025E19E9600608108 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 43CCB97225E19B6D00608108;
 					};
 				};
 			};
@@ -115,6 +209,7 @@
 			projectRoot = "";
 			targets = (
 				43CCB97225E19B6D00608108 /* Nice_Spot */,
+				43CCB9A025E19E9600608108 /* Nice_SpotTests */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +225,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		43CCB99F25E19E9600608108 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -137,13 +239,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43CCB99A25E19D7C00608108 /* Nice_Spot.xcdatamodeld in Sources */,
 				43CCB97B25E19B6D00608108 /* ViewController.swift in Sources */,
+				43CCB9B625E19F2D00608108 /* ImageManager.swift in Sources */,
+				43CCB98D25E19CD100608108 /* Persistence.swift in Sources */,
+				43CCB99625E19D3500608108 /* Spot.swift in Sources */,
 				43CCB97725E19B6D00608108 /* AppDelegate.swift in Sources */,
 				43CCB97925E19B6D00608108 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		43CCB99D25E19E9600608108 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43CCB9B225E19EF500608108 /* FakeData.swift in Sources */,
+				43CCB9A425E19E9600608108 /* Nice_SpotTests.swift in Sources */,
+				43CCB9AE25E19EC600608108 /* SpotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43CCB9A725E19E9600608108 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43CCB97225E19B6D00608108 /* Nice_Spot */;
+			targetProxy = 43CCB9A625E19E9600608108 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		43CCB97C25E19B6D00608108 /* Main.storyboard */ = {
@@ -216,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,9 +410,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nice_Spot/Nice_Spot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W8A2PVHCN3;
 				INFOPLIST_FILE = Nice_Spot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,9 +431,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nice_Spot/Nice_Spot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W8A2PVHCN3;
 				INFOPLIST_FILE = Nice_Spot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,6 +444,48 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		43CCB9A925E19E9600608108 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8A2PVHCN3;
+				INFOPLIST_FILE = Nice_SpotTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.hludovic.Nice-SpotTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nice_Spot.app/Nice_Spot";
+			};
+			name = Debug;
+		};
+		43CCB9AA25E19E9600608108 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8A2PVHCN3;
+				INFOPLIST_FILE = Nice_SpotTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.hludovic.Nice-SpotTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nice_Spot.app/Nice_Spot";
 			};
 			name = Release;
 		};
@@ -340,7 +510,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		43CCB9A825E19E9600608108 /* Build configuration list for PBXNativeTarget "Nice_SpotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43CCB9A925E19E9600608108 /* Debug */,
+				43CCB9AA25E19E9600608108 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		43CCB99825E19D7C00608108 /* Nice_Spot.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				43CCB99925E19D7C00608108 /* Nice_Spot.xcdatamodel */,
+			);
+			currentVersion = 43CCB99925E19D7C00608108 /* Nice_Spot.xcdatamodel */;
+			path = Nice_Spot.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 43CCB96B25E19B6D00608108 /* Project object */;
 }
