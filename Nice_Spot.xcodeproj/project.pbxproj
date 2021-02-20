@@ -22,6 +22,8 @@
 		43CCB9BE25E19F9900608108 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CCB9BD25E19F9900608108 /* CloudKit.framework */; };
 		43CCB9C225E1A32800608108 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB9C125E1A32800608108 /* Favorite.swift */; };
 		43CCB9C825E1A3E200608108 /* FavoriteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB9C725E1A3E200608108 /* FavoriteTests.swift */; };
+		43CCB9CC25E1A4DC00608108 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB9CB25E1A4DC00608108 /* Comment.swift */; };
+		43CCB9D225E1A50800608108 /* CommentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB9D125E1A50800608108 /* CommentTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		43CCB9BD25E19F9900608108 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		43CCB9C125E1A32800608108 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		43CCB9C725E1A3E200608108 /* FavoriteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTests.swift; sourceTree = "<group>"; };
+		43CCB9CB25E1A4DC00608108 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		43CCB9D125E1A50800608108 /* CommentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,15 +102,10 @@
 		43CCB97525E19B6D00608108 /* Nice_Spot */ = {
 			isa = PBXGroup;
 			children = (
-				43CCB9B925E19F9000608108 /* Nice_Spot.entitlements */,
-				43CCB97625E19B6D00608108 /* AppDelegate.swift */,
-				43CCB97825E19B6D00608108 /* SceneDelegate.swift */,
+				43CCB9D625E1A57F00608108 /* View */,
+				43CCB9D525E1A57900608108 /* Controller */,
 				43CCB98F25E19CEA00608108 /* Model */,
-				43CCB97A25E19B6D00608108 /* ViewController.swift */,
-				43CCB97C25E19B6D00608108 /* Main.storyboard */,
-				43CCB97F25E19B6E00608108 /* Assets.xcassets */,
-				43CCB98125E19B6E00608108 /* LaunchScreen.storyboard */,
-				43CCB98425E19B6E00608108 /* Info.plist */,
+				43CCB9D825E1A5FC00608108 /* Supporting files */,
 			);
 			path = Nice_Spot;
 			sourceTree = "<group>";
@@ -116,6 +115,7 @@
 			children = (
 				43CCB99525E19D3500608108 /* Spot.swift */,
 				43CCB9C125E1A32800608108 /* Favorite.swift */,
+				43CCB9CB25E1A4DC00608108 /* Comment.swift */,
 				43CCB98C25E19CD100608108 /* Persistence.swift */,
 				43CCB9B525E19F2D00608108 /* ImageManager.swift */,
 				43CCB99825E19D7C00608108 /* Nice_Spot.xcdatamodeld */,
@@ -128,6 +128,7 @@
 			children = (
 				43CCB9AD25E19EC600608108 /* SpotTests.swift */,
 				43CCB9C725E1A3E200608108 /* FavoriteTests.swift */,
+				43CCB9D125E1A50800608108 /* CommentTests.swift */,
 				43CCB9B125E19EF500608108 /* FakeData.swift */,
 				43CCB9A525E19E9600608108 /* Info.plist */,
 			);
@@ -140,6 +141,35 @@
 				43CCB9BD25E19F9900608108 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43CCB9D525E1A57900608108 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				43CCB97A25E19B6D00608108 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		43CCB9D625E1A57F00608108 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43CCB97C25E19B6D00608108 /* Main.storyboard */,
+				43CCB98125E19B6E00608108 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		43CCB9D825E1A5FC00608108 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				43CCB9B925E19F9000608108 /* Nice_Spot.entitlements */,
+				43CCB98425E19B6E00608108 /* Info.plist */,
+				43CCB97625E19B6D00608108 /* AppDelegate.swift */,
+				43CCB97825E19B6D00608108 /* SceneDelegate.swift */,
+				43CCB97F25E19B6E00608108 /* Assets.xcassets */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +279,7 @@
 				43CCB98D25E19CD100608108 /* Persistence.swift in Sources */,
 				43CCB99625E19D3500608108 /* Spot.swift in Sources */,
 				43CCB97725E19B6D00608108 /* AppDelegate.swift in Sources */,
+				43CCB9CC25E1A4DC00608108 /* Comment.swift in Sources */,
 				43CCB97925E19B6D00608108 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +291,7 @@
 				43CCB9C825E1A3E200608108 /* FavoriteTests.swift in Sources */,
 				43CCB9B225E19EF500608108 /* FakeData.swift in Sources */,
 				43CCB9AE25E19EC600608108 /* SpotTests.swift in Sources */,
+				43CCB9D225E1A50800608108 /* CommentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,10 +446,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Nice_Spot/Nice_Spot.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Nice_Spot/Supporting files/Nice_Spot.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W8A2PVHCN3;
-				INFOPLIST_FILE = Nice_Spot/Info.plist;
+				INFOPLIST_FILE = "Nice_Spot/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -435,10 +467,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Nice_Spot/Nice_Spot.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Nice_Spot/Supporting files/Nice_Spot.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W8A2PVHCN3;
-				INFOPLIST_FILE = Nice_Spot/Info.plist;
+				INFOPLIST_FILE = "Nice_Spot/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
