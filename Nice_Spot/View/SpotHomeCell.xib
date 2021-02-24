@@ -19,18 +19,18 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="381" height="348"/>
+            <rect key="frame" x="0.0" y="0.0" width="250" height="150"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="w2O-QD-CUh">
-                    <rect key="frame" x="65.5" y="99" width="250" height="150"/>
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="150"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="250" id="3kV-az-yhm"/>
                         <constraint firstAttribute="height" constant="150" id="xEX-Z7-5P5"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFO-b8-kdq">
-                    <rect key="frame" x="65.5" y="229" width="250" height="20"/>
+                    <rect key="frame" x="0.0" y="130" width="250" height="20"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJG-vs-Xmc">
                             <rect key="frame" x="104" y="-0.5" width="42" height="21"/>

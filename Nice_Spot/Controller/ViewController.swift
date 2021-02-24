@@ -8,23 +8,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var stackVIew: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let frame = CGRect(x: 0, y: 0, width: 250, height: 150)
+        let cell = SpotHomeCell(frame: frame)
+        let cell2 = SpotHomeCell(frame: frame)
+        let cell3 = SpotHomeCell(frame: frame)
         
-//        let cell = Bundle.main.loadNibNamed("SpotHomeCell", owner: nil, options: nil)?.first as? SpotHomeCell
-//        cell?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        cell?.frame = CGRect(x: 0, y: 0, width: 250, height: 150)
-
-
-//        stackView.addArrangedSubview(cell!)
+        stackVIew.alignment = .fill
+        stackVIew.distribution = .fillEqually
+        stackVIew.spacing = 10
+        stackVIew.backgroundColor = .clear
+        cell.widthAnchor.constraint(equalToConstant: 250).isActive = true
         
-//        let newView = Bundle.main.loadNibNamed("SpotHomeCell", owner: nil, options: nil)?.first as? SpotHomeCell
-//        
-//        stackView.addArrangedSubview(newView!)
-//        newView?.frame = CGRect(x: 0, y: 0, width: 250, height: 300)
-        // Do any additional setup after loading the view.
+        stackVIew.addArrangedSubview(cell)
+        stackVIew.addArrangedSubview(cell2)
+        stackVIew.addArrangedSubview(cell3)
     }
 
 
