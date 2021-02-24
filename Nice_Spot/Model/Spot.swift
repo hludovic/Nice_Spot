@@ -186,5 +186,3 @@ extension Spot {
         var municipality: String
     }
 }
-
-

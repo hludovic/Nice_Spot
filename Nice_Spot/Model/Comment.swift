@@ -9,6 +9,7 @@ import Foundation
 import CloudKit
 
 class Comment {
+    
     // MARK: - Public Static methods
     
     /// Retrieves all the comments posted on a Spot.
@@ -89,7 +90,7 @@ class Comment {
             }
         }
     }
-        
+    
     static func editComment(spotId: String, item: Item, success: @escaping (Bool) -> Void) {
         guard item.title != "", item.authorPseudo != "", item.detail != "" else { return success(false) }
         guard PersistenceController.isICloudAvailable else { return success(false) }

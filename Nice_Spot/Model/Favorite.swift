@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 extension Favorite {
-        
+    
     static func getFavoriteSpots(context: NSManagedObjectContext, completion: @escaping ([Spot]) -> Void) {
         var favSpots: [Spot] = []
         Spot.getSpots(context: context) { (spots) in
@@ -41,7 +41,7 @@ extension Favorite {
             }
         }
     }
-        
+    
     static func saveSpotId(context: NSManagedObjectContext, spotId: String, success: @escaping (Bool) -> Void) {
         canSave(spotId: spotId, context: context) { (canSave) in
             guard canSave else { return success(false) }
