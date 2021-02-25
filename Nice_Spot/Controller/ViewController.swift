@@ -8,26 +8,51 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     @IBOutlet weak var stackVIew: UIStackView!
+    private let content = HomeContent()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let frame = CGRect(x: 0, y: 0, width: 250, height: 150)
-        let cell = SpotHomeCell(frame: frame)
-        let cell2 = SpotHomeCell(frame: frame)
-        let cell3 = SpotHomeCell(frame: frame)
-        
-        stackVIew.alignment = .fill
-        stackVIew.distribution = .fillEqually
-        stackVIew.spacing = 10
-        stackVIew.backgroundColor = .clear
-        cell.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        
-        stackVIew.addArrangedSubview(cell)
-        stackVIew.addArrangedSubview(cell2)
-        stackVIew.addArrangedSubview(cell3)
+        content.displayDelegate = self
+        loadContent()
     }
+    
+    private func loadContent() {
+        content.refreshSpots(context: PersistenceController.shared.container.viewContext) { (success) in
+            if success {
+                let cagegories = self.content.usedCategories
+                for category in cagegories {
+                    DispatchQueue.main.async {
+                        let scrollView = SpotScrollView()
+                        scrollView.loadSpots(spots: self.content.getSpotsBy(category: category), category: category)
+                        self.stackVIew.addArrangedSubview(scrollView)
+                    }
+                }
+            }
+        }
+    }
+    
 
+}
 
+extension ViewController: HomeContentDelegate {
+    func displayError(_ text: String) {
+        print("Error")
+    }
+    
+    func isLoading(_ activity: Bool) {
+        if activity {
+            DispatchQueue.main.async {
+                print("Loading activity")
+
+            }
+        } else {
+            DispatchQueue.main.async {
+                print("Loading activity")
+
+            }
+        }
+    }
 }
 

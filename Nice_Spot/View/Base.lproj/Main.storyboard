@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,48 +17,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pBr-Yh-OCC">
-                                <rect key="frame" x="0.0" y="108" width="414" height="150"/>
-                                <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sf7-9J-8SY">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PpR-Es-laq">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="PpR-Es-laq" firstAttribute="centerY" secondItem="sf7-9J-8SY" secondAttribute="centerY" id="GQE-Vo-hpq"/>
-                                            <constraint firstItem="PpR-Es-laq" firstAttribute="width" secondItem="sf7-9J-8SY" secondAttribute="width" priority="250" id="Ipb-CI-kC3"/>
-                                            <constraint firstAttribute="trailing" secondItem="PpR-Es-laq" secondAttribute="trailing" id="UE4-Ut-Hwh"/>
-                                            <constraint firstItem="PpR-Es-laq" firstAttribute="leading" secondItem="sf7-9J-8SY" secondAttribute="leading" id="da8-xR-zgf"/>
-                                            <constraint firstItem="PpR-Es-laq" firstAttribute="top" secondItem="sf7-9J-8SY" secondAttribute="top" id="hlC-Xv-oA6"/>
-                                            <constraint firstAttribute="bottom" secondItem="PpR-Es-laq" secondAttribute="bottom" id="uJ4-5n-DmF"/>
-                                        </constraints>
-                                    </scrollView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="sf7-9J-8SY" firstAttribute="leading" secondItem="pBr-Yh-OCC" secondAttribute="leading" id="CZm-5Q-vgw"/>
-                                    <constraint firstAttribute="height" constant="150" id="RrT-AZ-vhT"/>
-                                    <constraint firstItem="sf7-9J-8SY" firstAttribute="top" secondItem="pBr-Yh-OCC" secondAttribute="top" id="YlH-8B-dCE"/>
-                                    <constraint firstAttribute="bottom" secondItem="sf7-9J-8SY" secondAttribute="bottom" id="z6W-rL-dyI"/>
-                                    <constraint firstAttribute="trailing" secondItem="sf7-9J-8SY" secondAttribute="trailing" id="zVE-Z4-FxB"/>
-                                </constraints>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="m3x-8L-8zD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pBr-Yh-OCC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sdb-lx-HF3"/>
-                            <constraint firstItem="pBr-Yh-OCC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="a5Q-af-CGy"/>
-                            <constraint firstItem="pBr-Yh-OCC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="qY1-0G-i8a"/>
+                            <constraint firstItem="m3x-8L-8zD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CRV-SN-YaZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m3x-8L-8zD" secondAttribute="trailing" id="NtV-2u-eIc"/>
+                            <constraint firstItem="m3x-8L-8zD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PkW-XR-mfd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="m3x-8L-8zD" secondAttribute="bottom" id="vnX-jL-1iq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uy8-PZ-7cm"/>
                     <connections>
-                        <outlet property="stackVIew" destination="PpR-Es-laq" id="4Rz-df-eoO"/>
+                        <outlet property="stackVIew" destination="m3x-8L-8zD" id="mkf-6e-Ahw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -104,9 +77,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

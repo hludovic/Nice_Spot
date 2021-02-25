@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		433803FC25E705E800135E71 /* SpotScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433803FB25E705E800135E71 /* SpotScrollView.xib */; };
+		4338040025E708BA00135E71 /* SpotScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433803FF25E708BA00135E71 /* SpotScrollView.swift */; };
+		4338040625E80F0A00135E71 /* HomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338040525E80F0A00135E71 /* HomeContent.swift */; };
 		43AA7C2B25E5F1CA0029BDA2 /* SpotHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA7C2A25E5F1CA0029BDA2 /* SpotHomeCell.swift */; };
 		43AA7C3125E5F1F40029BDA2 /* SpotHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43AA7C3025E5F1F40029BDA2 /* SpotHomeCell.xib */; };
 		43CCB97725E19B6D00608108 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB97625E19B6D00608108 /* AppDelegate.swift */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		433803FB25E705E800135E71 /* SpotScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpotScrollView.xib; sourceTree = "<group>"; };
+		433803FF25E708BA00135E71 /* SpotScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotScrollView.swift; sourceTree = "<group>"; };
+		4338040525E80F0A00135E71 /* HomeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContent.swift; sourceTree = "<group>"; };
 		43AA7C2A25E5F1CA0029BDA2 /* SpotHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotHomeCell.swift; sourceTree = "<group>"; };
 		43AA7C3025E5F1F40029BDA2 /* SpotHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpotHomeCell.xib; sourceTree = "<group>"; };
 		43CCB97325E19B6D00608108 /* Nice_Spot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nice_Spot.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				43CCB97A25E19B6D00608108 /* ViewController.swift */,
+				4338040525E80F0A00135E71 /* HomeContent.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -161,6 +168,8 @@
 				43CCB97C25E19B6D00608108 /* Main.storyboard */,
 				43AA7C3025E5F1F40029BDA2 /* SpotHomeCell.xib */,
 				43AA7C2A25E5F1CA0029BDA2 /* SpotHomeCell.swift */,
+				433803FB25E705E800135E71 /* SpotScrollView.xib */,
+				433803FF25E708BA00135E71 /* SpotScrollView.swift */,
 				43CCB98125E19B6E00608108 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -262,6 +271,7 @@
 				43CCB98025E19B6E00608108 /* Assets.xcassets in Resources */,
 				43CCB97E25E19B6D00608108 /* Main.storyboard in Resources */,
 				43AA7C3125E5F1F40029BDA2 /* SpotHomeCell.xib in Resources */,
+				433803FC25E705E800135E71 /* SpotScrollView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +296,8 @@
 				43CCB9B625E19F2D00608108 /* ImageManager.swift in Sources */,
 				43CCB98D25E19CD100608108 /* Persistence.swift in Sources */,
 				43CCB99625E19D3500608108 /* Spot.swift in Sources */,
+				4338040025E708BA00135E71 /* SpotScrollView.swift in Sources */,
+				4338040625E80F0A00135E71 /* HomeContent.swift in Sources */,
 				43CCB97725E19B6D00608108 /* AppDelegate.swift in Sources */,
 				43CCB9CC25E1A4DC00608108 /* Comment.swift in Sources */,
 				43CCB97925E19B6D00608108 /* SceneDelegate.swift in Sources */,

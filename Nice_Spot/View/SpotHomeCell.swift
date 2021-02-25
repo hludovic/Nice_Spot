@@ -13,6 +13,8 @@ class SpotHomeCell: UIView {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var titleBar: UIView!
+    private let imageManager = ImageManager()
+    private var spot: Spot?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,10 +26,22 @@ class SpotHomeCell: UIView {
         commonInit()
     }
     
-    func commonInit() {
+    private func commonInit() {
         Bundle.main.loadNibNamed(kXIB_NAME, owner: self, options: nil)
         contentView.fixInView(self)
-        
+    }
+    
+    func loadSpot(spot: Spot) {
+        guard let spotTitle = spot.title else { return }
+        guard let imageName = spot.imageName else { return }
+        imageManager.getUIImage(imageName: imageName) { [weak self] (uiImage) in
+            guard let newObject = self else { return }
+            guard let uiImage = uiImage else { return }
+            DispatchQueue.main.async {
+                newObject.imageView.image = uiImage
+                newObject.titleLabel.text = spotTitle
+            }
+        }
     }
 
 }
