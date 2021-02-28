@@ -7,7 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, DisplaySpotDetailDelegate {
+    func showDetail(_ spot: Spot?) {
+        
+        let vc = UIViewController(nibName: "DetailViewController", bundle: nil)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     @IBOutlet weak var stackVIew: UIStackView!
     private let content = HomeContent()
@@ -16,6 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         content.displayDelegate = self
         loadContent()
+        title = "AAA"
     }
     
     private func loadContent() {
@@ -24,8 +31,8 @@ class ViewController: UIViewController {
                 let cagegories = self.content.usedCategories
                 for category in cagegories {
                     DispatchQueue.main.async {
-                        let scrollView = SpotScrollView()
-                        scrollView.loadSpots(spots: self.content.getSpotsBy(category: category), category: category)
+                        let scrollView = SpotScrollView(spots: self.content.getSpotsBy(category: category), category: category)
+                        scrollView.displayDelegate = self
                         self.stackVIew.addArrangedSubview(scrollView)
                     }
                 }
@@ -33,7 +40,6 @@ class ViewController: UIViewController {
         }
     }
     
-
 }
 
 extension ViewController: HomeContentDelegate {

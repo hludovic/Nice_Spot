@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="fTZ-WO-Td8"/>
                 <outlet property="imageView" destination="w2O-QD-CUh" id="nze-yg-AHI"/>
+                <outlet property="showDetailButton" destination="YdV-l7-8xI" id="m7h-oX-WNY"/>
                 <outlet property="titleBar" destination="HFO-b8-kdq" id="xva-pj-1fj"/>
                 <outlet property="titleLabel" destination="HJG-vs-Xmc" id="8r2-Kh-VXj"/>
             </connections>
@@ -29,6 +30,13 @@
                         <constraint firstAttribute="height" constant="150" id="xEX-Z7-5P5"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdV-l7-8xI" userLabel="ShowDetailButton">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="150"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="showDetail:" destination="-1" eventType="touchUpInside" id="nv2-d6-vhl"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFO-b8-kdq" userLabel="titleBarView">
                     <rect key="frame" x="0.0" y="130" width="250" height="20"/>
                     <subviews>
@@ -52,12 +60,16 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="w2O-QD-CUh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="77w-7u-RTV"/>
+                <constraint firstItem="YdV-l7-8xI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Fu4-q8-rfu"/>
+                <constraint firstItem="YdV-l7-8xI" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="IDB-Rr-wgR"/>
                 <constraint firstItem="HFO-b8-kdq" firstAttribute="trailing" secondItem="w2O-QD-CUh" secondAttribute="trailing" id="J16-9r-txo"/>
+                <constraint firstItem="YdV-l7-8xI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LKn-9z-HcJ"/>
                 <constraint firstItem="HFO-b8-kdq" firstAttribute="bottom" secondItem="w2O-QD-CUh" secondAttribute="bottom" id="em7-ej-ww4"/>
                 <constraint firstItem="w2O-QD-CUh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lrG-jf-anW"/>
+                <constraint firstItem="YdV-l7-8xI" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="nTQ-XR-IDl"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-247.10144927536234" y="-182.8125"/>
+            <point key="canvasLocation" x="-247.82608695652175" y="-182.8125"/>
         </view>
     </objects>
     <resources>

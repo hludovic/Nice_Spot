@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4332EE7925EC4A590089C7BE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4332EE7725EC4A590089C7BE /* DetailViewController.swift */; };
+		4332EE7A25EC4A590089C7BE /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4332EE7825EC4A590089C7BE /* DetailViewController.xib */; };
 		433803FC25E705E800135E71 /* SpotScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433803FB25E705E800135E71 /* SpotScrollView.xib */; };
 		4338040025E708BA00135E71 /* SpotScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433803FF25E708BA00135E71 /* SpotScrollView.swift */; };
 		4338040625E80F0A00135E71 /* HomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338040525E80F0A00135E71 /* HomeContent.swift */; };
@@ -29,6 +31,7 @@
 		43CCB9C825E1A3E200608108 /* FavoriteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB9C725E1A3E200608108 /* FavoriteTests.swift */; };
 		43CCB9CC25E1A4DC00608108 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB9CB25E1A4DC00608108 /* Comment.swift */; };
 		43CCB9D225E1A50800608108 /* CommentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB9D125E1A50800608108 /* CommentTests.swift */; };
+		43F217DE25E82F2A000E4592 /* DetailContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217DD25E82F2A000E4592 /* DetailContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4332EE7725EC4A590089C7BE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4332EE7825EC4A590089C7BE /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		433803FB25E705E800135E71 /* SpotScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpotScrollView.xib; sourceTree = "<group>"; };
 		433803FF25E708BA00135E71 /* SpotScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotScrollView.swift; sourceTree = "<group>"; };
 		4338040525E80F0A00135E71 /* HomeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContent.swift; sourceTree = "<group>"; };
@@ -69,6 +74,7 @@
 		43CCB9C725E1A3E200608108 /* FavoriteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTests.swift; sourceTree = "<group>"; };
 		43CCB9CB25E1A4DC00608108 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		43CCB9D125E1A50800608108 /* CommentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTests.swift; sourceTree = "<group>"; };
+		43F217DD25E82F2A000E4592 /* DetailContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,7 @@
 			children = (
 				43CCB97A25E19B6D00608108 /* ViewController.swift */,
 				4338040525E80F0A00135E71 /* HomeContent.swift */,
+				43F217DD25E82F2A000E4592 /* DetailContent.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -166,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				43CCB97C25E19B6D00608108 /* Main.storyboard */,
+				4332EE7725EC4A590089C7BE /* DetailViewController.swift */,
+				4332EE7825EC4A590089C7BE /* DetailViewController.xib */,
 				43AA7C3025E5F1F40029BDA2 /* SpotHomeCell.xib */,
 				43AA7C2A25E5F1CA0029BDA2 /* SpotHomeCell.swift */,
 				433803FB25E705E800135E71 /* SpotScrollView.xib */,
@@ -269,6 +278,7 @@
 			files = (
 				43CCB98325E19B6E00608108 /* LaunchScreen.storyboard in Resources */,
 				43CCB98025E19B6E00608108 /* Assets.xcassets in Resources */,
+				4332EE7A25EC4A590089C7BE /* DetailViewController.xib in Resources */,
 				43CCB97E25E19B6D00608108 /* Main.storyboard in Resources */,
 				43AA7C3125E5F1F40029BDA2 /* SpotHomeCell.xib in Resources */,
 				433803FC25E705E800135E71 /* SpotScrollView.xib in Resources */,
@@ -300,7 +310,9 @@
 				4338040625E80F0A00135E71 /* HomeContent.swift in Sources */,
 				43CCB97725E19B6D00608108 /* AppDelegate.swift in Sources */,
 				43CCB9CC25E1A4DC00608108 /* Comment.swift in Sources */,
+				4332EE7925EC4A590089C7BE /* DetailViewController.swift in Sources */,
 				43CCB97925E19B6D00608108 /* SceneDelegate.swift in Sources */,
+				43F217DE25E82F2A000E4592 /* DetailContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
