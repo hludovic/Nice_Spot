@@ -12,6 +12,7 @@
 		433803FC25E705E800135E71 /* SpotScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433803FB25E705E800135E71 /* SpotScrollView.xib */; };
 		4338040025E708BA00135E71 /* SpotScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433803FF25E708BA00135E71 /* SpotScrollView.swift */; };
 		4338040625E80F0A00135E71 /* HomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338040525E80F0A00135E71 /* HomeContent.swift */; };
+		43A729C325ED5BA00071592E /* CommentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A729C225ED5BA00071592E /* CommentCellView.swift */; };
 		43AA7C2B25E5F1CA0029BDA2 /* SpotHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA7C2A25E5F1CA0029BDA2 /* SpotHomeCell.swift */; };
 		43AA7C3125E5F1F40029BDA2 /* SpotHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43AA7C3025E5F1F40029BDA2 /* SpotHomeCell.xib */; };
 		43CCB97725E19B6D00608108 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB97625E19B6D00608108 /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 		433803FB25E705E800135E71 /* SpotScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpotScrollView.xib; sourceTree = "<group>"; };
 		433803FF25E708BA00135E71 /* SpotScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotScrollView.swift; sourceTree = "<group>"; };
 		4338040525E80F0A00135E71 /* HomeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContent.swift; sourceTree = "<group>"; };
+		43A729C225ED5BA00071592E /* CommentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellView.swift; sourceTree = "<group>"; };
 		43AA7C2A25E5F1CA0029BDA2 /* SpotHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotHomeCell.swift; sourceTree = "<group>"; };
 		43AA7C3025E5F1F40029BDA2 /* SpotHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpotHomeCell.xib; sourceTree = "<group>"; };
 		43CCB97325E19B6D00608108 /* Nice_Spot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nice_Spot.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,7 @@
 				43CCB97A25E19B6D00608108 /* ViewController.swift */,
 				4338040525E80F0A00135E71 /* HomeContent.swift */,
 				43F217DD25E82F2A000E4592 /* DetailContent.swift */,
+				4332EE7725EC4A590089C7BE /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,8 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				43CCB97C25E19B6D00608108 /* Main.storyboard */,
-				4332EE7725EC4A590089C7BE /* DetailViewController.swift */,
 				4332EE7825EC4A590089C7BE /* DetailViewController.xib */,
+				43A729C225ED5BA00071592E /* CommentCellView.swift */,
 				43AA7C3025E5F1F40029BDA2 /* SpotHomeCell.xib */,
 				43AA7C2A25E5F1CA0029BDA2 /* SpotHomeCell.swift */,
 				433803FB25E705E800135E71 /* SpotScrollView.xib */,
@@ -310,6 +313,7 @@
 				4338040625E80F0A00135E71 /* HomeContent.swift in Sources */,
 				43CCB97725E19B6D00608108 /* AppDelegate.swift in Sources */,
 				43CCB9CC25E1A4DC00608108 /* Comment.swift in Sources */,
+				43A729C325ED5BA00071592E /* CommentCellView.swift in Sources */,
 				4332EE7925EC4A590089C7BE /* DetailViewController.swift in Sources */,
 				43CCB97925E19B6D00608108 /* SceneDelegate.swift in Sources */,
 				43F217DE25E82F2A000E4592 /* DetailContent.swift in Sources */,

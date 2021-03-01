@@ -8,9 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController, DisplaySpotDetailDelegate {
+    
     func showDetail(_ spot: Spot?) {
-        
-        let vc = UIViewController(nibName: "DetailViewController", bundle: nil)
+        guard let spot = spot else { return }
+        let vc = DetailViewController(nibName: "DetailViewController", bundle: nil, spot: spot)
         navigationController?.pushViewController(vc, animated: true)
     }
     

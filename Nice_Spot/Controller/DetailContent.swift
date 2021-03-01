@@ -12,16 +12,18 @@ import CoreData
 
 protocol DetailContentDelegate: AnyObject {
     func displayError(_ error: String)
-    func isSaving(_ saving: Bool)
-    func isFavorite(_ favorite: Bool)
+    func isSavingComment(_ saving: Bool)
+    func refreshFavorite()
+    func imageLoaded(_ loaded: Bool)
 }
 
 class DetailContent {
     // MARK: - Public Property
     
-    weak var displayDelegate: HomeContentDelegate?
+    weak var displayDelegate: DetailContentDelegate?
     let spot: Item
     var mapRegion : MKCoordinateRegion
+    private let context: NSManagedObjectContext
     var comments: [Comment.Item] = []
     var userComment : Comment.Item {
         didSet { refreshSaveButtonStatus() }
@@ -32,7 +34,7 @@ class DetailContent {
     var displayCommentSheet: Bool = false {
         didSet { if displayCommentSheet && canComment { clearUserLoadedComment() } }
     }
-    var favoriteButtonIcon: UIImage = UIImage(named: "placeholder")!  // << -- Replace to the true images
+    var favoriteButtonIcon: UIImage = UIImage(named: "bookmark")!
     
     // MARK: - Private Property
     
@@ -41,7 +43,7 @@ class DetailContent {
         didSet { refreshSaveButtonStatus() }
     }
     
-    init(spot: Spot) {
+    init(spot: Spot, context: NSManagedObjectContext) {
         let coodinate = CLLocationCoordinate2D(latitude: spot.latitude, longitude: spot.longitude)
         let item = Item(id: spot.id!,
                         title: spot.title!,
@@ -57,6 +59,7 @@ class DetailContent {
         )
         self.spot = item
         self.userComment = Comment.Item(id: "", title: "", detail: "", authorID: "", authorPseudo: "", creationDate: Date())
+        self.context = context
     }
     
     // MARK: - Public Methods
@@ -144,43 +147,46 @@ class DetailContent {
         }
     }
     
-    func loadImage(success: @escaping(Bool) -> Void) {
+    func loadImage() {
         imageManager.getUIImage(imageName: spot.imageName) { [unowned self] (uiImage) in
-            guard let uiImage = uiImage else { return success(false) }
+            guard let uiImage = uiImage else { return }
             DispatchQueue.main.async {
                 self.image = uiImage
-                success(true)
+                displayDelegate?.imageLoaded(true)
             }
         }
     }
     
-    func pressFavoriteButton(context: NSManagedObjectContext) {
-        Favorite.isFavorite(context: context, spotId: spot.id) { (isFavorite) in
+    func refreshFavoriteButtonStatus() {
+        if spot.isFavorite(context: context) {
+            favoriteButtonIcon = UIImage(named: "bookmark.fill")!
+            displayDelegate?.refreshFavorite()
+        } else {
+            favoriteButtonIcon = UIImage(named: "bookmark")!
+            displayDelegate?.refreshFavorite()
+        }
+    }
+    
+    func pressFavoriteButton() {
+        Favorite.isFavorite(context: context, spotId: spot.id) { [unowned self] (isFavorite) in
             let generator = UINotificationFeedbackGenerator()
             if isFavorite {
-                Favorite.remove(context: context, spotId: self.spot.id) { [unowned self] (success) in
+                Favorite.remove(context: self.context, spotId: self.spot.id) { [unowned self] (success) in
                     guard success else { return }
                     generator.notificationOccurred(.success)
-                    self.refreshFavoriteButtonStatus(context: context)
+                    self.refreshFavoriteButtonStatus()
                 }
             } else {
                 Favorite.saveSpotId(context: context, spotId: self.spot.id) { (success) in
                     guard success else { return }
                     generator.notificationOccurred(.success)
-                    self.refreshFavoriteButtonStatus(context: context)
+                    self.refreshFavoriteButtonStatus()
                 }
             }
+            displayDelegate?.refreshFavorite()
         }
     }
-    
-    func refreshFavoriteButtonStatus(context: NSManagedObjectContext) {
-        if spot.isFavorite(context: context) {
-            favoriteButtonIcon = UIImage(named: "placeholder")!  // << -- Replace to the true "bookmark.fill"
-        } else {
-            favoriteButtonIcon = UIImage(named: "placeholder")!  // << -- Replace to the true "bookmark"
-        }
-    }
-    
+        
     func openInMap() {
         let item = MKMapItem(placemark: MKPlacemark(coordinate: spot.location.coordinate))
         item.name = spot.title
@@ -192,6 +198,7 @@ class DetailContent {
 // MARK: - Private Methods
 
 private extension DetailContent {
+    
     func successOperation() {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)

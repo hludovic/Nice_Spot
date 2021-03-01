@@ -10,7 +10,6 @@ import UIKit
 class SpotScrollView: UIView, DisplaySpotDetailDelegate {
     
     func showDetail(_ spot: Spot?) {
-        print("XXX")
         displayDelegate?.showDetail(spot)
     }
     
