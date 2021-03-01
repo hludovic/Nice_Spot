@@ -17,30 +17,27 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="599" height="338"/>
+            <rect key="frame" x="0.0" y="0.0" width="599" height="305"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79Y-2M-B3z">
-                    <rect key="frame" x="0.0" y="0.0" width="599" height="43"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="43" id="lhZ-r7-Igs"/>
-                    </constraints>
+                    <rect key="frame" x="8" y="0.0" width="583" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AT7-Dv-Aot">
-                    <rect key="frame" x="0.0" y="43" width="599" height="295"/>
+                    <rect key="frame" x="0.0" y="20.5" width="599" height="284.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VVM-qm-roZ">
-                            <rect key="frame" x="0.0" y="0.0" width="599" height="295"/>
+                            <rect key="frame" x="8" y="0.0" width="599" height="284.5"/>
                         </stackView>
                     </subviews>
                     <constraints>
                         <constraint firstItem="VVM-qm-roZ" firstAttribute="top" secondItem="AT7-Dv-Aot" secondAttribute="top" id="IL3-fx-fQq"/>
                         <constraint firstAttribute="bottom" secondItem="VVM-qm-roZ" secondAttribute="bottom" id="RAm-Qu-dLG"/>
-                        <constraint firstItem="VVM-qm-roZ" firstAttribute="leading" secondItem="AT7-Dv-Aot" secondAttribute="leading" id="exh-9g-IM9"/>
-                        <constraint firstAttribute="trailing" secondItem="VVM-qm-roZ" secondAttribute="trailing" id="gJM-IX-WmG"/>
+                        <constraint firstItem="VVM-qm-roZ" firstAttribute="leading" secondItem="AT7-Dv-Aot" secondAttribute="leading" constant="8" id="exh-9g-IM9"/>
+                        <constraint firstAttribute="trailing" secondItem="VVM-qm-roZ" secondAttribute="trailing" constant="8" id="gJM-IX-WmG"/>
                         <constraint firstItem="VVM-qm-roZ" firstAttribute="width" secondItem="AT7-Dv-Aot" secondAttribute="width" priority="250" id="q32-K6-jYT"/>
                         <constraint firstItem="VVM-qm-roZ" firstAttribute="centerY" secondItem="AT7-Dv-Aot" secondAttribute="centerY" id="wNX-hL-xEL"/>
                     </constraints>
@@ -49,15 +46,15 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="AT7-Dv-Aot" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6Pf-RG-P8f"/>
-                <constraint firstAttribute="trailing" secondItem="79Y-2M-B3z" secondAttribute="trailing" id="KFf-8M-8AZ"/>
+                <constraint firstAttribute="trailing" secondItem="79Y-2M-B3z" secondAttribute="trailing" constant="8" id="KFf-8M-8AZ"/>
                 <constraint firstItem="79Y-2M-B3z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ko3-Ne-ReO"/>
                 <constraint firstAttribute="trailing" secondItem="AT7-Dv-Aot" secondAttribute="trailing" id="MXV-ZX-taX"/>
                 <constraint firstAttribute="bottom" secondItem="AT7-Dv-Aot" secondAttribute="bottom" id="OoS-y2-7PI"/>
                 <constraint firstItem="AT7-Dv-Aot" firstAttribute="top" secondItem="79Y-2M-B3z" secondAttribute="bottom" id="bFi-se-DnY"/>
-                <constraint firstItem="79Y-2M-B3z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rHo-aC-Wig"/>
+                <constraint firstItem="79Y-2M-B3z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="rHo-aC-Wig"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-71.739130434782609" y="-141.29464285714286"/>
+            <point key="canvasLocation" x="-71.739130434782609" y="-130.24553571428572"/>
         </view>
     </objects>
     <resources>

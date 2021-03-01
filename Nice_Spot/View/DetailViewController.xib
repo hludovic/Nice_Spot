@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="Nice_Spot" customModuleProvider="target">
             <connections>
+                <outlet property="commentsView" destination="X6v-qa-2fq" id="jbY-nr-zLX"/>
                 <outlet property="detailLabel" destination="hMJ-VV-4Ai" id="5pA-eD-8u2"/>
                 <outlet property="favoriteButton" destination="Lhj-1o-H8C" id="Ewt-xN-SDU"/>
                 <outlet property="imageCategory" destination="2Gh-25-c37" id="Tk0-9T-bTM"/>
@@ -121,6 +122,13 @@
                                         <constraint firstAttribute="height" constant="400" id="gqe-jx-k2D"/>
                                     </constraints>
                                 </mapView>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6v-qa-2fq">
+                                    <rect key="frame" x="0.0" y="955.5" width="414" height="160"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="160" id="6TC-Xe-vo7"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                         </stackView>
                     </subviews>

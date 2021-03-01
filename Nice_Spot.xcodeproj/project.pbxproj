@@ -12,7 +12,9 @@
 		433803FC25E705E800135E71 /* SpotScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433803FB25E705E800135E71 /* SpotScrollView.xib */; };
 		4338040025E708BA00135E71 /* SpotScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433803FF25E708BA00135E71 /* SpotScrollView.swift */; };
 		4338040625E80F0A00135E71 /* HomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338040525E80F0A00135E71 /* HomeContent.swift */; };
-		43A729C325ED5BA00071592E /* CommentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A729C225ED5BA00071592E /* CommentCellView.swift */; };
+		434212EA25ED6F7B00F3D879 /* CommentScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434212E925ED6F7B00F3D879 /* CommentScrollView.swift */; };
+		434212F225ED6FC000F3D879 /* CommentScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434212F125ED6FC000F3D879 /* CommentScrollView.xib */; };
+		43A729C325ED5BA00071592E /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A729C225ED5BA00071592E /* CommentView.swift */; };
 		43AA7C2B25E5F1CA0029BDA2 /* SpotHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA7C2A25E5F1CA0029BDA2 /* SpotHomeCell.swift */; };
 		43AA7C3125E5F1F40029BDA2 /* SpotHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43AA7C3025E5F1F40029BDA2 /* SpotHomeCell.xib */; };
 		43CCB97725E19B6D00608108 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB97625E19B6D00608108 /* AppDelegate.swift */; };
@@ -32,6 +34,7 @@
 		43CCB9C825E1A3E200608108 /* FavoriteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB9C725E1A3E200608108 /* FavoriteTests.swift */; };
 		43CCB9CC25E1A4DC00608108 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB9CB25E1A4DC00608108 /* Comment.swift */; };
 		43CCB9D225E1A50800608108 /* CommentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCB9D125E1A50800608108 /* CommentTests.swift */; };
+		43F08CFE25ED5E4C0023BF08 /* CommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F08CFD25ED5E4C0023BF08 /* CommentView.xib */; };
 		43F217DE25E82F2A000E4592 /* DetailContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F217DD25E82F2A000E4592 /* DetailContent.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +54,9 @@
 		433803FB25E705E800135E71 /* SpotScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpotScrollView.xib; sourceTree = "<group>"; };
 		433803FF25E708BA00135E71 /* SpotScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotScrollView.swift; sourceTree = "<group>"; };
 		4338040525E80F0A00135E71 /* HomeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContent.swift; sourceTree = "<group>"; };
-		43A729C225ED5BA00071592E /* CommentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellView.swift; sourceTree = "<group>"; };
+		434212E925ED6F7B00F3D879 /* CommentScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentScrollView.swift; sourceTree = "<group>"; };
+		434212F125ED6FC000F3D879 /* CommentScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentScrollView.xib; sourceTree = "<group>"; };
+		43A729C225ED5BA00071592E /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		43AA7C2A25E5F1CA0029BDA2 /* SpotHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotHomeCell.swift; sourceTree = "<group>"; };
 		43AA7C3025E5F1F40029BDA2 /* SpotHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpotHomeCell.xib; sourceTree = "<group>"; };
 		43CCB97325E19B6D00608108 /* Nice_Spot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nice_Spot.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +81,7 @@
 		43CCB9C725E1A3E200608108 /* FavoriteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTests.swift; sourceTree = "<group>"; };
 		43CCB9CB25E1A4DC00608108 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		43CCB9D125E1A50800608108 /* CommentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTests.swift; sourceTree = "<group>"; };
+		43F08CFD25ED5E4C0023BF08 /* CommentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentView.xib; sourceTree = "<group>"; };
 		43F217DD25E82F2A000E4592 /* DetailContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +104,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		434212F725ED77D700F3D879 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				43F08CFD25ED5E4C0023BF08 /* CommentView.xib */,
+				43A729C225ED5BA00071592E /* CommentView.swift */,
+				434212F125ED6FC000F3D879 /* CommentScrollView.xib */,
+				434212E925ED6F7B00F3D879 /* CommentScrollView.swift */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		434212F825ED77F700F3D879 /* Spot */ = {
+			isa = PBXGroup;
+			children = (
+				43AA7C3025E5F1F40029BDA2 /* SpotHomeCell.xib */,
+				43AA7C2A25E5F1CA0029BDA2 /* SpotHomeCell.swift */,
+				433803FB25E705E800135E71 /* SpotScrollView.xib */,
+				433803FF25E708BA00135E71 /* SpotScrollView.swift */,
+			);
+			path = Spot;
+			sourceTree = "<group>";
+		};
 		43CCB96A25E19B6D00608108 = {
 			isa = PBXGroup;
 			children = (
@@ -165,9 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				43CCB97A25E19B6D00608108 /* ViewController.swift */,
+				4332EE7725EC4A590089C7BE /* DetailViewController.swift */,
 				4338040525E80F0A00135E71 /* HomeContent.swift */,
 				43F217DD25E82F2A000E4592 /* DetailContent.swift */,
-				4332EE7725EC4A590089C7BE /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -175,13 +203,10 @@
 		43CCB9D625E1A57F00608108 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				43CCB97C25E19B6D00608108 /* Main.storyboard */,
+				434212F725ED77D700F3D879 /* Comment */,
+				434212F825ED77F700F3D879 /* Spot */,
 				4332EE7825EC4A590089C7BE /* DetailViewController.xib */,
-				43A729C225ED5BA00071592E /* CommentCellView.swift */,
-				43AA7C3025E5F1F40029BDA2 /* SpotHomeCell.xib */,
-				43AA7C2A25E5F1CA0029BDA2 /* SpotHomeCell.swift */,
-				433803FB25E705E800135E71 /* SpotScrollView.xib */,
-				433803FF25E708BA00135E71 /* SpotScrollView.swift */,
+				43CCB97C25E19B6D00608108 /* Main.storyboard */,
 				43CCB98125E19B6E00608108 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -282,6 +307,8 @@
 				43CCB98325E19B6E00608108 /* LaunchScreen.storyboard in Resources */,
 				43CCB98025E19B6E00608108 /* Assets.xcassets in Resources */,
 				4332EE7A25EC4A590089C7BE /* DetailViewController.xib in Resources */,
+				434212F225ED6FC000F3D879 /* CommentScrollView.xib in Resources */,
+				43F08CFE25ED5E4C0023BF08 /* CommentView.xib in Resources */,
 				43CCB97E25E19B6D00608108 /* Main.storyboard in Resources */,
 				43AA7C3125E5F1F40029BDA2 /* SpotHomeCell.xib in Resources */,
 				433803FC25E705E800135E71 /* SpotScrollView.xib in Resources */,
@@ -312,8 +339,9 @@
 				4338040025E708BA00135E71 /* SpotScrollView.swift in Sources */,
 				4338040625E80F0A00135E71 /* HomeContent.swift in Sources */,
 				43CCB97725E19B6D00608108 /* AppDelegate.swift in Sources */,
+				434212EA25ED6F7B00F3D879 /* CommentScrollView.swift in Sources */,
 				43CCB9CC25E1A4DC00608108 /* Comment.swift in Sources */,
-				43A729C325ED5BA00071592E /* CommentCellView.swift in Sources */,
+				43A729C325ED5BA00071592E /* CommentView.swift in Sources */,
 				4332EE7925EC4A590089C7BE /* DetailViewController.swift in Sources */,
 				43CCB97925E19B6D00608108 /* SceneDelegate.swift in Sources */,
 				43F217DE25E82F2A000E4592 /* DetailContent.swift in Sources */,

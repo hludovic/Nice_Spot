@@ -15,8 +15,7 @@ class ViewController: UIViewController, DisplaySpotDetailDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    
-    @IBOutlet weak var stackVIew: UIStackView!
+    @IBOutlet weak var stackView: UIStackView!
     private let content = HomeContent()
     
     override func viewDidLoad() {
@@ -34,7 +33,8 @@ class ViewController: UIViewController, DisplaySpotDetailDelegate {
                     DispatchQueue.main.async {
                         let scrollView = SpotScrollView(spots: self.content.getSpotsBy(category: category), category: category)
                         scrollView.displayDelegate = self
-                        self.stackVIew.addArrangedSubview(scrollView)
+                        scrollView.heightAnchor.constraint(equalToConstant: 180).isActive = true
+                        self.stackView.addArrangedSubview(scrollView)
                     }
                 }
             }

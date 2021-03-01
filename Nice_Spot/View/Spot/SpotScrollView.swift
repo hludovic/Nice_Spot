@@ -7,15 +7,12 @@
 
 import UIKit
 
-class SpotScrollView: UIView, DisplaySpotDetailDelegate {
-    
-    func showDetail(_ spot: Spot?) {
-        displayDelegate?.showDetail(spot)
-    }
+class SpotScrollView: UIView {
     
     var displayDelegate: DisplaySpotDetailDelegate?
     private let kXIB_NAME = "SpotScrollView"
     private let scrollSize: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
+    
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
@@ -61,4 +58,12 @@ class SpotScrollView: UIView, DisplaySpotDetailDelegate {
         }
     }
     
+}
+
+extension SpotScrollView: DisplaySpotDetailDelegate {
+    
+    func showDetail(_ spot: Spot?) {
+        displayDelegate?.showDetail(spot)
+    }
+
 }

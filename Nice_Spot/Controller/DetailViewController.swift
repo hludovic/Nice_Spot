@@ -18,13 +18,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var commentsView: UIView!
+    
     private var contentManager: DetailContent!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         contentManager.displayDelegate = self
         loadContent()
-        // Do any additional setup after loading the view.
     }
     
     init(nibName: String, bundle nibBundleOrNil: Bundle?, spot: Spot) {
@@ -61,19 +62,27 @@ private extension DetailViewController {
         annotation.coordinate = contentManager.spot.location.coordinate
         mapView.addAnnotation(annotation)
         
-        
+        contentManager.refreshComments()
     }
+    
 }
 
 extension DetailViewController: DetailContentDelegate {
+    
+    func refreshComments() {
+        guard contentManager.comments.count > 0 else { return }
+        commentsView.isHidden = false
+        let comments = CommentScrollView(comments: contentManager.comments)
+        commentsView.addSubview(comments)
+        comments.fixInView(commentsView)
+    }
     
     func refreshFavorite() {
         favoriteButton.setImage(contentManager.favoriteButtonIcon, for: .normal)
     }
     
-    
     func displayError(_ error: String) {
-        print("ERROR")
+        print(error)
     }
     
     func isSavingComment(_ saving: Bool) {

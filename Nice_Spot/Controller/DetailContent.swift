@@ -15,6 +15,7 @@ protocol DetailContentDelegate: AnyObject {
     func isSavingComment(_ saving: Bool)
     func refreshFavorite()
     func imageLoaded(_ loaded: Bool)
+    func refreshComments()
 }
 
 class DetailContent {
@@ -24,17 +25,17 @@ class DetailContent {
     let spot: Item
     var mapRegion : MKCoordinateRegion
     private let context: NSManagedObjectContext
-    var comments: [Comment.Item] = []
     var userComment : Comment.Item {
         didSet { refreshSaveButtonStatus() }
     }
+    private(set) var comments: [Comment.Item] = []
     private(set) var isSaveButtonDisabled = true
     private(set) var canComment: Bool = false
     private(set) var image: UIImage = UIImage(named: "placeholder")!
     var displayCommentSheet: Bool = false {
         didSet { if displayCommentSheet && canComment { clearUserLoadedComment() } }
     }
-    var favoriteButtonIcon: UIImage = UIImage(named: "bookmark")!
+    private(set) var favoriteButtonIcon: UIImage
     
     // MARK: - Private Property
     
@@ -60,6 +61,7 @@ class DetailContent {
         self.spot = item
         self.userComment = Comment.Item(id: "", title: "", detail: "", authorID: "", authorPseudo: "", creationDate: Date())
         self.context = context
+        self.favoriteButtonIcon = UIImage(named: "bookmark")!
     }
     
     // MARK: - Public Methods
@@ -73,6 +75,7 @@ class DetailContent {
                 DispatchQueue.main.async {
                     self.comments = comments
                     self.refreshCanCommentStatus(comments: comments)
+                    displayDelegate?.refreshComments()
                 }
             }
         }

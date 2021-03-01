@@ -57,6 +57,7 @@ class SpotHomeCell: UIView {
             }
         }
     }
+    
     @IBAction func showDetail(_ sender: UIButton) {
         displayDelegate?.showDetail(spot)
     }
