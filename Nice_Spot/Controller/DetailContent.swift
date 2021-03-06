@@ -12,37 +12,25 @@ import CoreData
 
 protocol DetailContentDelegate: AnyObject {
     func displayError(_ error: String)
-    func isSavingComment(_ saving: Bool)
     func refreshFavorite()
     func imageLoaded(_ loaded: Bool)
     func refreshComments()
+    func commentLoaded()
 }
 
 class DetailContent {
-    // MARK: - Public Property
     
-    weak var displayDelegate: DetailContentDelegate?
+    // MARK: - Property
+    
     let spot: Item
+    weak var displayDelegate: DetailContentDelegate?
     var mapRegion : MKCoordinateRegion
-    private let context: NSManagedObjectContext
-    var userComment : Comment.Item {
-        didSet { refreshSaveButtonStatus() }
-    }
+    private(set) var userComment : Comment.Item
     private(set) var comments: [Comment.Item] = []
-    private(set) var isSaveButtonDisabled = true
-    private(set) var canComment: Bool = false
     private(set) var image: UIImage = UIImage(named: "placeholder")!
-    var displayCommentSheet: Bool = false {
-        didSet { if displayCommentSheet && canComment { clearUserLoadedComment() } }
-    }
     private(set) var favoriteButtonIcon: UIImage
-    
-    // MARK: - Private Property
-    
     private let imageManager = ImageManager()
-    private var isLoading: Bool = false {
-        didSet { refreshSaveButtonStatus() }
-    }
+    private let context: NSManagedObjectContext
     
     init(spot: Spot, context: NSManagedObjectContext) {
         let coodinate = CLLocationCoordinate2D(latitude: spot.latitude, longitude: spot.longitude)
@@ -74,81 +62,38 @@ class DetailContent {
             case .success(let comments):
                 DispatchQueue.main.async {
                     self.comments = comments
-                    self.refreshCanCommentStatus(comments: comments)
                     displayDelegate?.refreshComments()
                 }
             }
         }
     }
-    
-    func loadUserComment(success: @escaping (Bool) -> Void) {
+
+    func loadUserComment() {
         Comment.getComments(spotId: spot.id) { [unowned self] (result) in
             switch result {
             case .failure(_ ):
                 DispatchQueue.main.async { displayDelegate?.displayError("ERROR LOADING COMMENT") }
-                return success(false)
+                return
             case .success(let comments):
                 guard !comments.isEmpty else {
                     DispatchQueue.main.async { displayDelegate?.displayError("ERROR LOADING COMMENT") }
-                    return success(false)
+                    return
                 }
                 for comment in comments {
                     if comment.authorID == "__defaultOwner__" {
                         DispatchQueue.main.async {
                             self.userComment = comment
-                            self.displayCommentSheet.toggle()
+                            displayDelegate?.commentLoaded()
                         }
-                        return success(true)
+                        return
                     }
                 }
             }
             DispatchQueue.main.async { displayDelegate?.displayError("ERROR LOADING COMMENT") }
-            return success(false)
+            return
         }
     }
     
-    func updateUserComment(success: @escaping (Bool) -> Void) {
-        isLoading = true
-        Comment.editComment(spotId: spot.id, item: userComment) { [unowned self] (isEdited) in
-            guard isEdited else {
-                DispatchQueue.main.async {
-                    self.isLoading = false
-                    displayDelegate?.displayError("ERROR EDDITING")
-                }
-                return success(false)
-            }
-            DispatchQueue.main.async {
-                successOperation()
-                refreshComments()
-            }
-            return success(true)
-        }
-    }
-    
-    func saveUserComment(success: @escaping (Bool) -> Void) {
-        isLoading = true
-        Comment.postComment(spotId: spot.id, item: userComment) { [unowned self] (posted) in
-            guard posted else {
-                DispatchQueue.main.async {
-                    self.isLoading = false
-                    displayDelegate?.displayError("ERROR SAVING")
-                }
-                return success(false)
-            }
-            DispatchQueue.main.async {
-                successOperation()
-                self.comments.append(Comment.Item(
-                    id: "",
-                    title: userComment.title,
-                    detail: userComment.detail,
-                    authorID: "",
-                    authorPseudo: userComment.authorPseudo,
-                    creationDate: Date())
-                )
-            }
-            return success(true)
-        }
-    }
     
     func loadImage() {
         imageManager.getUIImage(imageName: spot.imageName) { [unowned self] (uiImage) in
@@ -202,36 +147,12 @@ class DetailContent {
 
 private extension DetailContent {
     
-    func successOperation() {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.success)
-        isLoading = false
-        displayCommentSheet = false
-        canComment = false
-        isSaveButtonDisabled = false
-    }
-    
-    func refreshCanCommentStatus(comments: [Comment.Item]) {
-        guard comments.count > 0 else { return canComment = true }
-        for comment in comments {
-            if comment.authorID == "__defaultOwner__" {
-                canComment = false
-            } else {
-                canComment = true
-            }
-        }
-    }
-    
     func clearUserLoadedComment() {
         userComment.title = ""
         userComment.authorPseudo = ""
         userComment.detail = ""
     }
     
-    func refreshSaveButtonStatus() {
-        let isNotFill = (userComment.title == "" || userComment.authorPseudo == "") || (userComment.detail == "")
-        isSaveButtonDisabled = isNotFill || isLoading
-    }
 }
 
 // MARK: - Nested Struct

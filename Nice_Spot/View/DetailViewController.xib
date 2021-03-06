@@ -18,6 +18,7 @@
                 <outlet property="imageSpot" destination="hci-1m-W9J" id="kvI-yo-1aV"/>
                 <outlet property="mapView" destination="oAw-tm-fVj" id="2d0-1g-2Ot"/>
                 <outlet property="municipalityLabel" destination="0bQ-ut-jLN" id="Jbv-Aw-dSE"/>
+                <outlet property="testCommentButton" destination="DTo-K7-wUZ" id="od9-4g-seb"/>
                 <outlet property="titleLabel" destination="ilD-yk-XmY" id="MF8-kv-Pr1"/>
                 <outlet property="titleView" destination="s54-w4-wEe" id="RsP-So-qAJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -32,9 +33,9 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3vT-tO-bS5">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="955.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1055.5"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4g-oG-vSP">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4g-oG-vSP" userLabel="Title View">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="hci-1m-W9J" userLabel="imageSpot">
@@ -97,7 +98,7 @@
                                         <constraint firstAttribute="bottom" secondItem="s54-w4-wEe" secondAttribute="bottom" id="y6i-pP-A3O"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xX-dW-xK9">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xX-dW-xK9" userLabel="Detail View">
                                     <rect key="frame" x="0.0" y="300" width="414" height="255.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMJ-VV-4Ai" userLabel="Detail Label">
@@ -122,11 +123,29 @@
                                         <constraint firstAttribute="height" constant="400" id="gqe-jx-k2D"/>
                                     </constraints>
                                 </mapView>
-                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6v-qa-2fq">
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6v-qa-2fq" userLabel="Comment View">
                                     <rect key="frame" x="0.0" y="955.5" width="414" height="160"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="160" id="6TC-Xe-vo7"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1n-LT-X93">
+                                    <rect key="frame" x="0.0" y="955.5" width="414" height="100"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTo-K7-wUZ">
+                                            <rect key="frame" x="184" y="35" width="46" height="30"/>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="commentButtonTest:" destination="-1" eventType="touchUpInside" id="w3a-GK-QwQ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="8bE-hq-9ix"/>
+                                        <constraint firstItem="DTo-K7-wUZ" firstAttribute="centerX" secondItem="x1n-LT-X93" secondAttribute="centerX" id="C7k-Hi-Lbw"/>
+                                        <constraint firstItem="DTo-K7-wUZ" firstAttribute="centerY" secondItem="x1n-LT-X93" secondAttribute="centerY" id="moC-3M-mY2"/>
                                     </constraints>
                                 </view>
                             </subviews>

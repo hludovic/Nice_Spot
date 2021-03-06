@@ -19,6 +19,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var commentsView: UIView!
+    @IBOutlet weak var testCommentButton: UIButton!
     
     private var contentManager: DetailContent!
     
@@ -42,6 +43,9 @@ class DetailViewController: UIViewController {
         contentManager.pressFavoriteButton()
     }
     
+    @IBAction func commentButtonTest(_ sender: UIButton) {
+        contentManager.loadUserComment()
+    }
 }
 
 private extension DetailViewController {
@@ -69,6 +73,15 @@ private extension DetailViewController {
 
 extension DetailViewController: DetailContentDelegate {
     
+    func commentLoaded() {
+        let commentView = CommentViewController(
+            nibName: "CommentViewController",
+            bundle: nil, comment: contentManager.userComment,
+            mode: .Edit, spotId: contentManager.spot.id
+        )
+        present(commentView, animated: true, completion: nil)
+    }
+    
     func refreshComments() {
         guard contentManager.comments.count > 0 else { return }
         commentsView.isHidden = false
@@ -83,10 +96,6 @@ extension DetailViewController: DetailContentDelegate {
     
     func displayError(_ error: String) {
         print(error)
-    }
-    
-    func isSavingComment(_ saving: Bool) {
-        
     }
     
     func imageLoaded(_ loaded: Bool) {

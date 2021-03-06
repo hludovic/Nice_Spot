@@ -7,14 +7,14 @@
 
 import UIKit
 
-class CommentView: UIView {
+class CommentCell: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var pseudoLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
-    private let kXIB_NAME = "CommentView"
+    private let kXIB_NAME = "CommentCell"
     private let cellSize: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     
     init(comment: Comment.Item) {

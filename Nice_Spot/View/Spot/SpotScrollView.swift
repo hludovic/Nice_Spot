@@ -47,7 +47,7 @@ class SpotScrollView: UIView {
         guard let category = self.category else { return }
         titleLabel.text = category
         for spot in spots {
-            let cell = SpotHomeCell(spot: spot)
+            let cell = SpotCell(spot: spot)
             cell.displayDelegate = self
             cell.widthAnchor.constraint(equalToConstant: 250).isActive = true
             stackView.alignment = .fill

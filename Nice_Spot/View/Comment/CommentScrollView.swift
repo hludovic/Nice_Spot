@@ -44,7 +44,7 @@ class CommentScrollView: UIView {
         guard let comments = comments else { return }
         guard comments.count > 0 else { return }
         for comment in comments {
-            let cell = CommentView(comment: comment)
+            let cell = CommentCell(comment: comment)
             cell.widthAnchor.constraint(equalToConstant: 250).isActive = true
             stackView.alignment = .fill
             stackView.distribution = .fillEqually

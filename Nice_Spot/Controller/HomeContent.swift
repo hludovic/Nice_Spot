@@ -14,6 +14,7 @@ protocol HomeContentDelegate: AnyObject {
 }
 
 class HomeContent {
+    
     // MARK: - Properties
     
     weak var displayDelegate: HomeContentDelegate?
