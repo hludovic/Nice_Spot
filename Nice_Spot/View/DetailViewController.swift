@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var commentsView: UIView!
-    @IBOutlet weak var testCommentButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
     
     private var contentManager: DetailContent!
     
@@ -43,7 +43,7 @@ class DetailViewController: UIViewController {
         contentManager.pressFavoriteButton()
     }
     
-    @IBAction func commentButtonTest(_ sender: UIButton) {
+    @IBAction func commentButton(_ sender: UIButton) {
         contentManager.loadUserComment()
     }
 }
@@ -72,22 +72,40 @@ private extension DetailViewController {
 }
 
 extension DetailViewController: DetailContentDelegate {
+    func displayCommentScrollView() {
+        guard contentManager.comments.count > 0 else { return }
+        commentsView.isHidden = false
+        let comments = CommentScrollView(comments: contentManager.comments)
+        commentsView.addSubview(comments)
+        comments.fixInView(commentsView)
+    }
     
-    func commentLoaded() {
+    func displayCommentButton(mode: CommentViewController.Mode) {
+        commentButton.isHidden = false
+        switch mode {
+        case .Edit:
+            commentButton.setTitle(" Edit your comment", for: .normal)
+        case .Save:
+            commentButton.setTitle(" Save a comment", for: .normal)
+        }
+    }
+    
+    func displayPostCommentView() {
+        let commentView = CommentViewController(
+            nibName: "CommentViewController",
+            bundle: nil, comment: contentManager.userComment,
+            mode: .Save, spotId: contentManager.spot.id
+        )
+        present(commentView, animated: true, completion: nil)
+    }
+    
+    func displayEditCommentView() {
         let commentView = CommentViewController(
             nibName: "CommentViewController",
             bundle: nil, comment: contentManager.userComment,
             mode: .Edit, spotId: contentManager.spot.id
         )
         present(commentView, animated: true, completion: nil)
-    }
-    
-    func refreshComments() {
-        guard contentManager.comments.count > 0 else { return }
-        commentsView.isHidden = false
-        let comments = CommentScrollView(comments: contentManager.comments)
-        commentsView.addSubview(comments)
-        comments.fixInView(commentsView)
     }
     
     func refreshFavorite() {

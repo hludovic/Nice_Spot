@@ -14,8 +14,10 @@ protocol DetailContentDelegate: AnyObject {
     func displayError(_ error: String)
     func refreshFavorite()
     func imageLoaded(_ loaded: Bool)
-    func refreshComments()
-    func commentLoaded()
+    func displayCommentScrollView()
+    func displayPostCommentView()
+    func displayEditCommentView()
+    func displayCommentButton(mode: CommentViewController.Mode)
 }
 
 class DetailContent {
@@ -60,15 +62,22 @@ class DetailContent {
             case .failure(_ ):
                 DispatchQueue.main.async { displayDelegate?.displayError("ERROR LOADING COMMENTS") }
             case .success(let comments):
-                DispatchQueue.main.async {
-                    self.comments = comments
-                    displayDelegate?.refreshComments()
+                self.comments = comments
+                DispatchQueue.main.async { displayDelegate?.displayCommentScrollView() }
+                
+                for comment in comments {
+                    if comment.authorID == "__defaultOwner__" {
+                        DispatchQueue.main.async { displayDelegate?.displayCommentButton(mode: .Edit) }
+                        return
+                    }
                 }
+                DispatchQueue.main.async { displayDelegate?.displayCommentButton(mode: .Save) }
             }
         }
     }
 
     func loadUserComment() {
+        
         Comment.getComments(spotId: spot.id) { [unowned self] (result) in
             switch result {
             case .failure(_ ):
@@ -76,20 +85,20 @@ class DetailContent {
                 return
             case .success(let comments):
                 guard !comments.isEmpty else {
-                    DispatchQueue.main.async { displayDelegate?.displayError("ERROR LOADING COMMENT") }
+                    DispatchQueue.main.async { displayDelegate?.displayPostCommentView() }
                     return
                 }
                 for comment in comments {
                     if comment.authorID == "__defaultOwner__" {
                         DispatchQueue.main.async {
                             self.userComment = comment
-                            displayDelegate?.commentLoaded()
+                            displayDelegate?.displayEditCommentView()
                         }
                         return
                     }
                 }
             }
-            DispatchQueue.main.async { displayDelegate?.displayError("ERROR LOADING COMMENT") }
+            DispatchQueue.main.async { displayDelegate?.displayPostCommentView() }
             return
         }
     }
