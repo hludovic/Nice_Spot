@@ -25,6 +25,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let button = UIBarButtonItem(image: UIImage(named: "square.and.arrow.up"), style: .plain, target: self, action: #selector(displayOpenInMap))
+        navigationItem.rightBarButtonItem = button
         contentManager.displayDelegate = self
         loadContent()
     }
@@ -45,6 +47,15 @@ class DetailViewController: UIViewController {
     
     @IBAction func commentButton(_ sender: UIButton) {
         contentManager.loadUserComment()
+    }
+    
+    @objc func displayOpenInMap() {
+        let alertController = UIAlertController(title: "Open in map", message: "Do you want to consult the location on Maps ?", preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Get Directions", style: .default) { _ in
+            self.contentManager.openInMap()
+        })
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 }
 
