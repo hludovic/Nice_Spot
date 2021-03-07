@@ -10,7 +10,6 @@ import CoreData
 
 protocol HomeContentDelegate: AnyObject {
     func displayError(_ text: String)
-    func isLoading(_ activity: Bool)
 }
 
 class HomeContent {
@@ -22,32 +21,27 @@ class HomeContent {
     private(set) var errorMessage: String? {
         didSet { displayDelegate?.displayError(errorMessage!) }
     }
-    private(set) var isLoading: Bool? {
-        didSet { displayDelegate?.isLoading(isLoading!) }
-    }
     private(set) var usedCategories: [String] = []
     
     // MARK: - Public Methods
     
-    func loadSpots(context: NSManagedObjectContext) {
+    func loadSpots(context: NSManagedObjectContext, success: @escaping (Bool) -> Void) {
         Spot.getSpots(context: context) { [unowned self] (result) in
             self.spots = result
             self.getUsedCategories()
+            return success(true)
         }
     }
     
     func refreshSpots (context: NSManagedObjectContext, success: @escaping (Bool) -> Void) {
-        isLoading = true
         Spot.refreshSpots(context: context) { [unowned self] (refreshed) in
             guard refreshed else {
-                isLoading = false
                 errorMessage = "Error: Not refreshed"
                 return success(false)
             }
             Spot.getSpots(context: context) { [unowned self] (spotsFetched) in
                 spots = spotsFetched
                 getUsedCategories()
-                isLoading = false
                 return success(true)
             }
         }

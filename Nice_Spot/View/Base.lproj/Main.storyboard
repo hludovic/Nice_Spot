@@ -45,6 +45,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="uy8-PZ-7cm"/>
                     <connections>
+                        <outlet property="scrollView" destination="Dzf-i0-klo" id="ZvR-gG-RhT"/>
                         <outlet property="stackView" destination="m3x-8L-8zD" id="mkf-6e-Ahw"/>
                     </connections>
                 </viewController>
