@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4304670025F46C67003A96E5 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430466FF25F46C67003A96E5 /* FavoriteViewController.swift */; };
-		4304671025F4727A003A96E5 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4304670F25F4727A003A96E5 /* FavoriteCell.swift */; };
 		430A351F25ED95AE00497446 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430A351D25ED95AE00497446 /* CommentViewController.swift */; };
 		430A352025ED95AE00497446 /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430A351E25ED95AE00497446 /* CommentViewController.xib */; };
 		4332EE7925EC4A590089C7BE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4332EE7725EC4A590089C7BE /* DetailViewController.swift */; };
@@ -18,6 +17,9 @@
 		4338040625E80F0A00135E71 /* HomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338040525E80F0A00135E71 /* HomeContent.swift */; };
 		434212EA25ED6F7B00F3D879 /* CommentScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434212E925ED6F7B00F3D879 /* CommentScrollView.swift */; };
 		434212F225ED6FC000F3D879 /* CommentScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434212F125ED6FC000F3D879 /* CommentScrollView.xib */; };
+		4342C55225F481C00041640C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4342C55125F481C00041640C /* SearchViewController.swift */; };
+		4344D19325F4872100737091 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344D19125F4872100737091 /* TableViewCell.swift */; };
+		4344D19425F4872100737091 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4344D19225F4872100737091 /* TableViewCell.xib */; };
 		43A729C325ED5BA00071592E /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A729C225ED5BA00071592E /* CommentCell.swift */; };
 		43AA7C2B25E5F1CA0029BDA2 /* SpotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA7C2A25E5F1CA0029BDA2 /* SpotCell.swift */; };
 		43AA7C3125E5F1F40029BDA2 /* SpotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43AA7C3025E5F1F40029BDA2 /* SpotCell.xib */; };
@@ -54,7 +56,6 @@
 
 /* Begin PBXFileReference section */
 		430466FF25F46C67003A96E5 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
-		4304670F25F4727A003A96E5 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		430A351D25ED95AE00497446 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		430A351E25ED95AE00497446 /* CommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
 		4332EE7725EC4A590089C7BE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +65,9 @@
 		4338040525E80F0A00135E71 /* HomeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContent.swift; sourceTree = "<group>"; };
 		434212E925ED6F7B00F3D879 /* CommentScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentScrollView.swift; sourceTree = "<group>"; };
 		434212F125ED6FC000F3D879 /* CommentScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentScrollView.xib; sourceTree = "<group>"; };
+		4342C55125F481C00041640C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		4344D19125F4872100737091 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		4344D19225F4872100737091 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		43A729C225ED5BA00071592E /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		43AA7C2A25E5F1CA0029BDA2 /* SpotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCell.swift; sourceTree = "<group>"; };
 		43AA7C3025E5F1F40029BDA2 /* SpotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpotCell.xib; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 			children = (
 				43CCB97A25E19B6D00608108 /* HomeViewController.swift */,
 				430466FF25F46C67003A96E5 /* FavoriteViewController.swift */,
+				4342C55125F481C00041640C /* SearchViewController.swift */,
 				4338040525E80F0A00135E71 /* HomeContent.swift */,
 				43F217DD25E82F2A000E4592 /* DetailContent.swift */,
 			);
@@ -217,8 +222,9 @@
 				434212F825ED77F700F3D879 /* Spot */,
 				4332EE7825EC4A590089C7BE /* DetailViewController.xib */,
 				4332EE7725EC4A590089C7BE /* DetailViewController.swift */,
+				4344D19225F4872100737091 /* TableViewCell.xib */,
+				4344D19125F4872100737091 /* TableViewCell.swift */,
 				43CCB97C25E19B6D00608108 /* Main.storyboard */,
-				4304670F25F4727A003A96E5 /* FavoriteCell.swift */,
 				43CCB98125E19B6E00608108 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -317,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				430A352025ED95AE00497446 /* CommentViewController.xib in Resources */,
+				4344D19425F4872100737091 /* TableViewCell.xib in Resources */,
 				43CCB98325E19B6E00608108 /* LaunchScreen.storyboard in Resources */,
 				43CCB98025E19B6E00608108 /* Assets.xcassets in Resources */,
 				4332EE7A25EC4A590089C7BE /* DetailViewController.xib in Resources */,
@@ -352,12 +359,13 @@
 				43CCB99625E19D3500608108 /* Spot.swift in Sources */,
 				4338040025E708BA00135E71 /* SpotScrollView.swift in Sources */,
 				4338040625E80F0A00135E71 /* HomeContent.swift in Sources */,
+				4342C55225F481C00041640C /* SearchViewController.swift in Sources */,
 				43CCB97725E19B6D00608108 /* AppDelegate.swift in Sources */,
+				4344D19325F4872100737091 /* TableViewCell.swift in Sources */,
 				4304670025F46C67003A96E5 /* FavoriteViewController.swift in Sources */,
 				434212EA25ED6F7B00F3D879 /* CommentScrollView.swift in Sources */,
 				43CCB9CC25E1A4DC00608108 /* Comment.swift in Sources */,
 				43A729C325ED5BA00071592E /* CommentCell.swift in Sources */,
-				4304671025F4727A003A96E5 /* FavoriteCell.swift in Sources */,
 				4332EE7925EC4A590089C7BE /* DetailViewController.swift in Sources */,
 				43CCB97925E19B6D00608108 /* SceneDelegate.swift in Sources */,
 				43F217DE25E82F2A000E4592 /* DetailContent.swift in Sources */,
