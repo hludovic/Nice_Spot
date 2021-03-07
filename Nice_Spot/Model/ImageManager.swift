@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class ImageManager {
-    static let imageCache = NSCache<NSString, UIImage>()
+    private static let imageCache = NSCache<NSString, UIImage>()
     private let urlAssets = "https://github.com/hludovic/NiceSpotAssets/blob/main/"
 
     func getUIImage(imageName: String, completion: @escaping (UIImage?) -> Void) {

@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
         content.displayDelegate = self
         loadRefreshControll()
         loadContent()
-        title = "AAA"
+        navigationItem.title = "Découvrir"
     }
     
 }
@@ -28,22 +28,11 @@ private extension HomeViewController {
     @objc func handleRefreshControl() {
         content.refreshSpots(context: PersistenceController.shared.container.viewContext) { (success) in
             if success {
-                let cagegories = self.content.usedCategories
                 DispatchQueue.main.async { self.removeStackViewContent() }
-                for category in cagegories {
-                    DispatchQueue.main.async {
-                        let scrollView = SpotScrollView(spots: self.content.getSpotsBy(category: category), category: category)
-                        scrollView.displayDelegate = self
-                        scrollView.heightAnchor.constraint(equalToConstant: 180).isActive = true
-                        self.stackView.addArrangedSubview(scrollView)
-                        self.stackView.isHidden = false
-                        self.scrollView.refreshControl?.endRefreshing()
-                    }
-                }
+                self.fillContent()
             }
         }
     }
-    
     
     func loadRefreshControll() {
         scrollView.refreshControl = UIRefreshControl()
@@ -75,16 +64,16 @@ private extension HomeViewController {
             }
         }
     }
-
-}
-
-extension HomeViewController: DisplaySpotDetailDelegate {
     
-    private func displayErrorMessage(message: String) {
+    func displayErrorMessage(message: String) {
         let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
+    
+}
+
+extension HomeViewController: DisplaySpotDetailDelegate {
     
     func showDetail(_ spot: Spot?) {
         guard let spot = spot else { return }
