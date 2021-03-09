@@ -20,6 +20,7 @@
 		4342C55225F481C00041640C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4342C55125F481C00041640C /* SearchViewController.swift */; };
 		4344D19325F4872100737091 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344D19125F4872100737091 /* TableViewCell.swift */; };
 		4344D19425F4872100737091 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4344D19225F4872100737091 /* TableViewCell.xib */; };
+		4344D19E25F4935800737091 /* DetailContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344D19D25F4935800737091 /* DetailContentTests.swift */; };
 		43A729C325ED5BA00071592E /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A729C225ED5BA00071592E /* CommentCell.swift */; };
 		43AA7C2B25E5F1CA0029BDA2 /* SpotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA7C2A25E5F1CA0029BDA2 /* SpotCell.swift */; };
 		43AA7C3125E5F1F40029BDA2 /* SpotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43AA7C3025E5F1F40029BDA2 /* SpotCell.xib */; };
@@ -68,6 +69,7 @@
 		4342C55125F481C00041640C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4344D19125F4872100737091 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		4344D19225F4872100737091 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		4344D19D25F4935800737091 /* DetailContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentTests.swift; sourceTree = "<group>"; };
 		43A729C225ED5BA00071592E /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		43AA7C2A25E5F1CA0029BDA2 /* SpotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCell.swift; sourceTree = "<group>"; };
 		43AA7C3025E5F1F40029BDA2 /* SpotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpotCell.xib; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				43CCB9AD25E19EC600608108 /* SpotTests.swift */,
 				43CCB9C725E1A3E200608108 /* FavoriteTests.swift */,
 				43CCB9D125E1A50800608108 /* CommentTests.swift */,
+				4344D19D25F4935800737091 /* DetailContentTests.swift */,
 				43CCB9B125E19EF500608108 /* FakeData.swift */,
 				43CCB9A525E19E9600608108 /* Info.plist */,
 			);
@@ -378,6 +381,7 @@
 			files = (
 				43CCB9C825E1A3E200608108 /* FavoriteTests.swift in Sources */,
 				43CCB9B225E19EF500608108 /* FakeData.swift in Sources */,
+				4344D19E25F4935800737091 /* DetailContentTests.swift in Sources */,
 				43CCB9AE25E19EC600608108 /* SpotTests.swift in Sources */,
 				43CCB9D225E1A50800608108 /* CommentTests.swift in Sources */,
 			);

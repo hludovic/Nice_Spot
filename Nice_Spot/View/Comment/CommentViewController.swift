@@ -7,11 +7,15 @@
 
 import UIKit
 
+protocol CommentViewDelegate {
+    func commentOperationSucceed(comment: Comment.Item)
+}
 
 class CommentViewController: UIViewController {
 
     enum Mode { case Save, Edit }
     
+    var delegate: CommentViewDelegate?
     private var comment: Comment.Item?
     private var commentMode: Mode?
     private var spotId: String?
@@ -60,7 +64,12 @@ class CommentViewController: UIViewController {
         
     }
     
-    private func loadContent() {
+    
+}
+
+private extension CommentViewController {
+    
+    func loadContent() {
         guard let mode = commentMode else { return }
         switch mode {
         case .Edit:
@@ -76,10 +85,6 @@ class CommentViewController: UIViewController {
             commentTextView.text = ""
         }
     }
-    
-}
-
-private extension CommentViewController {
     
     func updateCommentItem() -> Bool {
         guard
@@ -134,8 +139,7 @@ private extension CommentViewController {
                 return success(false)
             }
             DispatchQueue.main.async {
-                // Delegate Refresh Spots
-                print("Edited")
+                delegate?.commentOperationSucceed(comment: commentItem)
                 isLoading(false)
             }
             return success(true)
@@ -161,8 +165,7 @@ private extension CommentViewController {
                 return success(false)
             }
             DispatchQueue.main.async {
-                // Delegate Refresh Spots
-                print("Saved")
+                delegate?.commentOperationSucceed(comment: commentItem)
                 isLoading(false)
             }
             return success(true)

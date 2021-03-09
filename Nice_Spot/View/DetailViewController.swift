@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var commentsView: UIView!
+    @IBOutlet weak var commentsView: CommentScrollView!
     @IBOutlet weak var commentButton: UIButton!
     
     private var contentManager: DetailContent!
@@ -80,15 +80,29 @@ private extension DetailViewController {
         contentManager.refreshComments()
     }
     
+    func displayErrorMessage(message: String) {
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+    
+}
+
+extension DetailViewController: CommentViewDelegate {
+    
+    func commentOperationSucceed(comment: Comment.Item) {
+        contentManager.refreshComments()
+        print("OK")
+    }
+    
 }
 
 extension DetailViewController: DetailContentDelegate {
+    
     func displayCommentScrollView() {
         guard contentManager.comments.count > 0 else { return }
-        commentsView.isHidden = false
-        let comments = CommentScrollView(comments: contentManager.comments)
-        commentsView.addSubview(comments)
-        comments.fixInView(commentsView)
+        commentsView.clearContent()
+        commentsView.loadComments(comments: contentManager.comments)
     }
     
     func displayCommentButton(mode: CommentViewController.Mode) {
@@ -107,6 +121,7 @@ extension DetailViewController: DetailContentDelegate {
             bundle: nil, comment: contentManager.userComment,
             mode: .Save, spotId: contentManager.spot.id
         )
+        commentView.delegate = self
         present(commentView, animated: true, completion: nil)
     }
     
@@ -116,6 +131,7 @@ extension DetailViewController: DetailContentDelegate {
             bundle: nil, comment: contentManager.userComment,
             mode: .Edit, spotId: contentManager.spot.id
         )
+        commentView.delegate = self
         present(commentView, animated: true, completion: nil)
     }
     
@@ -123,8 +139,10 @@ extension DetailViewController: DetailContentDelegate {
         favoriteButton.setImage(contentManager.favoriteButtonIcon, for: .normal)
     }
     
-    func displayError(_ error: String) {
-        print(error)
+    func displayError(_ text: String) {
+        DispatchQueue.main.async {
+            self.displayErrorMessage(message: text)
+        }
     }
     
     func imageLoaded(_ loaded: Bool) {

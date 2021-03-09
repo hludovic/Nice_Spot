@@ -43,6 +43,8 @@ class CommentCell: UIView {
     private func commonInit() {
         Bundle.main.loadNibNamed(kXIB_NAME, owner: self, options: nil)
         contentView.fixInView(self)
+        self.layer.cornerRadius = 8
+        self.layer.masksToBounds = true
     }
     
 }

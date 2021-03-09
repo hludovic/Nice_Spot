@@ -123,7 +123,7 @@
                                         <constraint firstAttribute="height" constant="400" id="gqe-jx-k2D"/>
                                     </constraints>
                                 </mapView>
-                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6v-qa-2fq" userLabel="Comment View">
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6v-qa-2fq" userLabel="Comment View" customClass="CommentScrollView" customModule="Nice_Spot" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="955.5" width="414" height="160"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
@@ -169,7 +169,7 @@
                 <constraint firstItem="g9p-Kg-ksE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nEr-c8-aFM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="g9p-Kg-ksE" secondAttribute="bottom" id="row-hF-Ru5"/>
             </constraints>
-            <point key="canvasLocation" x="-606" y="198"/>
+            <point key="canvasLocation" x="-607.24637681159425" y="197.54464285714286"/>
         </view>
     </objects>
     <resources>

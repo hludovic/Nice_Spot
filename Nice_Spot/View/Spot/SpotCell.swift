@@ -25,7 +25,8 @@ class SpotCell: UIView {
     init(spot: Spot) {
         super.init(frame: cellSize)
         commonInit()
-        loadSpot(spot: spot)
+        self.spot = spot
+        loadSpot()
     }
     
     override init(frame: CGRect) {
@@ -41,9 +42,12 @@ class SpotCell: UIView {
     private func commonInit() {
         Bundle.main.loadNibNamed(kXIB_NAME, owner: self, options: nil)
         contentView.fixInView(self)
+        self.layer.cornerRadius = 8
+        self.layer.masksToBounds = true
     }
     
-    private func loadSpot(spot: Spot) {
+    private func loadSpot() {
+        guard let spot = spot else { return }
         guard let spotTitle = spot.title else { return }
         guard let imageName = spot.imageName else { return }
         imageManager.getUIImage(imageName: imageName) { [weak self] (uiImage) in

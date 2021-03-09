@@ -21,7 +21,6 @@ class SearchViewController: UIViewController {
         tableView.delegate = self
         searchBar.placeholder = "Search..."
     }
-    
 }
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {

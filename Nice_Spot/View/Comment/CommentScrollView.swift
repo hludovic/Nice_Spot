@@ -15,14 +15,6 @@ class CommentScrollView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
-    private var comments: [Comment.Item]?
-    
-    init(comments: [Comment.Item]) {
-        super.init(frame: scrollSize)
-        self.comments = comments
-        commonInit()
-        loadComments()
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,9 +31,9 @@ class CommentScrollView: UIView {
         contentView.fixInView(self)
     }
     
-    func loadComments() {
+    func loadComments(comments: [Comment.Item]) {
+        self.isHidden = false
         self.titleLabel.text = "Comments"
-        guard let comments = comments else { return }
         guard comments.count > 0 else { return }
         for comment in comments {
             let cell = CommentCell(comment: comment)
@@ -54,5 +46,9 @@ class CommentScrollView: UIView {
         }
     }
 
-
+    func clearContent() {
+        for item in stackView.arrangedSubviews {
+            stackView.removeArrangedSubview(item)
+        }
+    }
 }

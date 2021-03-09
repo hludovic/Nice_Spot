@@ -58,7 +58,7 @@ private extension HomeViewController {
             DispatchQueue.main.async {
                 let scrollView = SpotScrollView(spots: self.content.getSpotsBy(category: category), category: category)
                 scrollView.displayDelegate = self
-                scrollView.heightAnchor.constraint(equalToConstant: 180).isActive = true
+                scrollView.heightAnchor.constraint(equalToConstant: 185).isActive = true
                 self.stackView.addArrangedSubview(scrollView)
                 self.scrollView.refreshControl?.endRefreshing()
             }

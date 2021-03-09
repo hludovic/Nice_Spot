@@ -26,7 +26,7 @@ class DetailContent {
     
     let spot: Item
     weak var displayDelegate: DetailContentDelegate?
-    var mapRegion : MKCoordinateRegion
+    private(set) var mapRegion : MKCoordinateRegion
     private(set) var userComment : Comment.Item
     private(set) var comments: [Comment.Item] = []
     private(set) var image: UIImage = UIImage(named: "placeholder")!
@@ -57,27 +57,26 @@ class DetailContent {
     // MARK: - Public Methods
     
     func refreshComments() {
-        Comment.getComments(spotId: spot.id) { [unowned self] (result) in
+        Comment.getComments(spotId: spot.id) { (result) in
             switch result {
             case .failure(_ ):
-                DispatchQueue.main.async { displayDelegate?.displayError("ERROR LOADING COMMENTS") }
+                DispatchQueue.main.async { self.displayDelegate?.displayError("ERROR LOADING COMMENTS") }
             case .success(let comments):
                 self.comments = comments
-                DispatchQueue.main.async { displayDelegate?.displayCommentScrollView() }
+                DispatchQueue.main.async { self.displayDelegate?.displayCommentScrollView() }
                 
                 for comment in comments {
                     if comment.authorID == "__defaultOwner__" {
-                        DispatchQueue.main.async { displayDelegate?.displayCommentButton(mode: .Edit) }
+                        DispatchQueue.main.async { self.displayDelegate?.displayCommentButton(mode: .Edit) }
                         return
                     }
                 }
-                DispatchQueue.main.async { displayDelegate?.displayCommentButton(mode: .Save) }
+                DispatchQueue.main.async { self.displayDelegate?.displayCommentButton(mode: .Save) }
             }
         }
     }
-
+    
     func loadUserComment() {
-        
         Comment.getComments(spotId: spot.id) { [unowned self] (result) in
             switch result {
             case .failure(_ ):
