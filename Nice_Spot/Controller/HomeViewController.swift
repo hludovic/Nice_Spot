@@ -39,7 +39,6 @@ private extension HomeViewController {
         scrollView.refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
     }
     
-    
     func loadContent() {
         content.loadSpots(context: PersistenceController.shared.container.viewContext) { (_ ) in
             self.fillContent()
@@ -73,14 +72,20 @@ private extension HomeViewController {
     
 }
 
-extension HomeViewController: DisplaySpotDetailDelegate {
+extension HomeViewController: SpotScrollDisplayDelegate {
     
-    func showDetail(_ spot: Spot?) {
+    func displayDetail(_ spot: Spot?) {
         guard let spot = spot else { return }
         let vc = DetailViewController(nibName: "DetailViewController", bundle: nil, spot: spot)
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    func displayAll(_ spots: [Spot]?) {
+        guard let spots = spots else { return }
+        let tableVC = AllSpotsTableVC(nibName: "TableViewController", bundle: nil, spots: spots)
+        navigationController?.pushViewController(tableVC, animated: true)
+    }
+        
 }
 
 extension HomeViewController: HomeContentDelegate {

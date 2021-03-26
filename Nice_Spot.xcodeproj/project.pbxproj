@@ -21,6 +21,8 @@
 		4344D19325F4872100737091 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344D19125F4872100737091 /* TableViewCell.swift */; };
 		4344D19425F4872100737091 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4344D19225F4872100737091 /* TableViewCell.xib */; };
 		4344D19E25F4935800737091 /* DetailContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344D19D25F4935800737091 /* DetailContentTests.swift */; };
+		4393AC44260D5E4F003E66EE /* AllSpotsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4393AC42260D5E4F003E66EE /* AllSpotsTableVC.swift */; };
+		4393AC45260D5E4F003E66EE /* AllSpotsTableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4393AC43260D5E4F003E66EE /* AllSpotsTableVC.xib */; };
 		43A729C325ED5BA00071592E /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A729C225ED5BA00071592E /* CommentCell.swift */; };
 		43AA7C2B25E5F1CA0029BDA2 /* SpotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA7C2A25E5F1CA0029BDA2 /* SpotCell.swift */; };
 		43AA7C3125E5F1F40029BDA2 /* SpotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43AA7C3025E5F1F40029BDA2 /* SpotCell.xib */; };
@@ -70,6 +72,8 @@
 		4344D19125F4872100737091 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		4344D19225F4872100737091 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		4344D19D25F4935800737091 /* DetailContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentTests.swift; sourceTree = "<group>"; };
+		4393AC42260D5E4F003E66EE /* AllSpotsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSpotsTableVC.swift; sourceTree = "<group>"; };
+		4393AC43260D5E4F003E66EE /* AllSpotsTableVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllSpotsTableVC.xib; sourceTree = "<group>"; };
 		43A729C225ED5BA00071592E /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		43AA7C2A25E5F1CA0029BDA2 /* SpotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCell.swift; sourceTree = "<group>"; };
 		43AA7C3025E5F1F40029BDA2 /* SpotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpotCell.xib; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 				43AA7C2A25E5F1CA0029BDA2 /* SpotCell.swift */,
 				433803FB25E705E800135E71 /* SpotScrollView.xib */,
 				433803FF25E708BA00135E71 /* SpotScrollView.swift */,
+				4393AC43260D5E4F003E66EE /* AllSpotsTableVC.xib */,
+				4393AC42260D5E4F003E66EE /* AllSpotsTableVC.swift */,
 			);
 			path = Spot;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 				4344D19425F4872100737091 /* TableViewCell.xib in Resources */,
 				43CCB98325E19B6E00608108 /* LaunchScreen.storyboard in Resources */,
 				43CCB98025E19B6E00608108 /* Assets.xcassets in Resources */,
+				4393AC45260D5E4F003E66EE /* AllSpotsTableVC.xib in Resources */,
 				4332EE7A25EC4A590089C7BE /* DetailViewController.xib in Resources */,
 				434212F225ED6FC000F3D879 /* CommentScrollView.xib in Resources */,
 				43F08CFE25ED5E4C0023BF08 /* CommentCell.xib in Resources */,
@@ -353,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43AA7C2B25E5F1CA0029BDA2 /* SpotCell.swift in Sources */,
+				4393AC44260D5E4F003E66EE /* AllSpotsTableVC.swift in Sources */,
 				43CCB99A25E19D7C00608108 /* Nice_Spot.xcdatamodeld in Sources */,
 				43CCB9C225E1A32800608108 /* Favorite.swift in Sources */,
 				43CCB97B25E19B6D00608108 /* HomeViewController.swift in Sources */,

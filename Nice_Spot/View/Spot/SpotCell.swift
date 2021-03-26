@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol DisplaySpotDetailDelegate {
-    func showDetail(_ spot: Spot?)
+protocol SpotCellDisplayDelegate {
+    func displayDetail(_ spot: Spot?)
 }
 class SpotCell: UIView {
-    var displayDelegate: DisplaySpotDetailDelegate?
+    var displayDelegate: SpotCellDisplayDelegate?
     private let kXIB_NAME = "SpotCell"
     private let cellSize: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     @IBOutlet var contentView: UIView!
@@ -63,7 +63,7 @@ class SpotCell: UIView {
     }
     
     @IBAction func showDetail(_ sender: UIButton) {
-        displayDelegate?.showDetail(spot)
+        displayDelegate?.displayDetail(spot)
     }
     
 }

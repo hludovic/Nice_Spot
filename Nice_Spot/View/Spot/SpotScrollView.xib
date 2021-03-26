@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79Y-2M-B3z">
-                    <rect key="frame" x="8" y="0.0" width="545" height="20.5"/>
+                    <rect key="frame" x="8" y="0.0" width="41.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -42,11 +42,19 @@
                         <constraint firstItem="VVM-qm-roZ" firstAttribute="centerY" secondItem="AT7-Dv-Aot" secondAttribute="centerY" id="wNX-hL-xEL"/>
                     </constraints>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWd-ba-l68">
+                    <rect key="frame" x="506" y="-5" width="47" height="30.5"/>
+                    <state key="normal" title="See All"/>
+                    <connections>
+                        <action selector="displayAll:" destination="-1" eventType="touchUpInside" id="izT-uv-Dxc"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="AT7-Dv-Aot" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6Pf-RG-P8f"/>
-                <constraint firstAttribute="trailing" secondItem="79Y-2M-B3z" secondAttribute="trailing" constant="8" id="KFf-8M-8AZ"/>
+                <constraint firstAttribute="trailing" secondItem="hWd-ba-l68" secondAttribute="trailing" constant="8" id="Dgc-rr-A89"/>
+                <constraint firstItem="hWd-ba-l68" firstAttribute="centerY" secondItem="79Y-2M-B3z" secondAttribute="centerY" id="GuD-4f-kSv"/>
                 <constraint firstItem="79Y-2M-B3z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ko3-Ne-ReO"/>
                 <constraint firstAttribute="trailing" secondItem="AT7-Dv-Aot" secondAttribute="trailing" id="MXV-ZX-taX"/>
                 <constraint firstAttribute="bottom" secondItem="AT7-Dv-Aot" secondAttribute="bottom" id="OoS-y2-7PI"/>

@@ -1,35 +1,43 @@
 //
-//  FavoriteTableViewController.swift
+//  TableViewController.swift
 //  Nice_Spot
 //
-//  Created by Ludovic HENRY on 06/03/2021.
+//  Created by Ludovic HENRY on 25/03/2021.
 //
 
 import UIKit
 
-class FavoriteViewController: UITableViewController {
+class AllSpotsTableVC: UITableViewController {
     private var spots: [Spot] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
-        navigationItem.title = "Favorite spots"
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        Favorite.getFavoriteSpots(context: PersistenceController.shared.container.viewContext) { (spots) in
-            self.spots = spots
-            self.tableView.reloadData()
+        if let titleView = spots.first?.category {
+            navigationItem.title = "All \(titleView)s"
         }
+        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
+
     }
 
-    // MARK: - Table view data source
+    init(nibName: String, bundle nibBundleOrNil: Bundle?, spots: [Spot]) {
+        super.init(nibName: nibName, bundle: nibBundleOrNil)
+        self.spots = spots
+    }
     
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return spots.count
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
         cell.titleLabel.text = spots[indexPath.row].title
@@ -48,5 +56,5 @@ class FavoriteViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 67
     }
-    
+
 }

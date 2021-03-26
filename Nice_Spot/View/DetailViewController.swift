@@ -92,7 +92,6 @@ extension DetailViewController: CommentViewDelegate {
     
     func commentOperationSucceed(comment: Comment.Item) {
         contentManager.refreshComments()
-        print("OK")
     }
     
 }
