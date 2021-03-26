@@ -14,7 +14,7 @@ As writing spots is a long and tedious task, the user will be able to refresh th
 
 This application implements UIkit. [The SwiftUI version can be found here][1]
 
-![alt text][2]
+![Image][2]
 
 [1]: https://github.com/hludovic/NiceSpot
-[2]: previews.png "Preview"
+[2]: previews.jpg "Preview"
