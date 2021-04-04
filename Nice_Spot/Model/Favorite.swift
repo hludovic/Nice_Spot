@@ -10,6 +10,8 @@ import CoreData
 
 extension Favorite {
     
+    // MARK: - Public Static Methods
+
     static func getFavoriteSpots(context: NSManagedObjectContext, completion: @escaping ([Spot]) -> Void) {
         var favSpots: [Spot] = []
         Spot.getSpots(context: context) { (spots) in

@@ -82,7 +82,7 @@ extension HomeViewController: SpotScrollDisplayDelegate {
     
     func displayAll(_ spots: [Spot]?) {
         guard let spots = spots else { return }
-        let tableVC = AllSpotsTableVC(nibName: "TableViewController", bundle: nil, spots: spots)
+        let tableVC = AllSpotsTableVC(nibName: "AllSpotsTableVC", bundle: nil, spots: spots)
         navigationController?.pushViewController(tableVC, animated: true)
     }
         

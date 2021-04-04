@@ -22,7 +22,7 @@ extension Spot {
             completion(result)
         } else { completion([]) }
     }
-        
+    
     /// Retrieves the Spots whose title contains the characters passed in parameter.
     /// - Parameters:
     ///   - context: The NSManagedObjectContext used for this task.
